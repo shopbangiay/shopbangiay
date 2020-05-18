@@ -1,9 +1,8 @@
 @extends('layout')
 @section('content')
 <div class="features_items"><!--features_items-->
-    <h2 class="title text-center">Danh mục </h2>
+    <h2 class="title text-center">Danh mục {{$cate->category_name}} </h2>
     @foreach ($cate_id as $item)
-        
     <div class="col-sm-4">
         <div class="product-image-wrapper">
             
