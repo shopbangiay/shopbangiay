@@ -91,6 +91,7 @@
                             <div class="productinfo text-center">
                                 <img src="{{asset('public/frontend/images/recommend3.jpg')}}" alt="" />
                                 <h2>$56</h2>
+
                                 <p>Easy Polo Black Edition</p>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
