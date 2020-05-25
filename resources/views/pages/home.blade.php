@@ -30,5 +30,3 @@
     </div>
     @endforeach
 </div><!--features_items-->
-
-@endsection
