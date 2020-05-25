@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','HomeController@index');
 Route::get('/danh-muc-san-pham/{id}', 'HomeController@show_category');
 Route::get('/dashboard', 'HomeController@show_dashboard');
-
+Route::get('/chi-tiet-san-pham/{id}','HomeController@show_detail');
+Route::get('Trang-chu','HomeController@index');
 
 //-------------------------------DANH MỤC SẢN PHẨM------------------------- */
 Route::get('/add-category', 'CateController@add_category');
@@ -34,7 +35,15 @@ Route::post('/update-category/{id_cate}', 'CateController@update_category');
 // -------------------------------------------------------------------------
 
 //-------------------------------SẢN PHẨM----------------------------------- */
+Route::get('/add-product', 'ProductController@add_product');
+Route::get('/all-product', 'ProductController@all_product');
+Route::get('/edit-product/{id_product}', 'ProductController@edit_product');
+Route::get('/delete-product/{id_product}', 'ProductController@delete_product');
+Route::get('/unactive-product/{id_product}', 'ProductController@unactive_product');
+Route::get('/active-product/{id_product}', 'ProductController@active_product');
 
+Route::post('/save-product', 'ProductController@save_product');
+Route::post('/update-product/{id_product}', 'ProductController@update_product');
 // -------------------------------------------------------------------------
 
 //-------------------------------CART--------------------------------------- */
