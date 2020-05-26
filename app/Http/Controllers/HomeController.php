@@ -31,7 +31,7 @@ class HomeController extends Controller
     
         $cate_id = Product::join('category_product as cate', 'product.category_id', 'cate.category_id')
                             ->where('cate.category_id', $id)
-                            ->select('product.product_name', 'product.product_price')
+                            ->select('product.product_name', 'product.product_price','product_image')
                             ->get();
 
         $detail_sp = DB::table('product as sp')->join('category_product as cate', 'cate.category_id', '=', 'sp.category_id')

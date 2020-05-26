@@ -10,7 +10,8 @@
             <div class="single-products">
                 <div class="productinfo text-center">
                     <a href="{{URL::to('chi-tiet-san-pham/'. $item_sp->product_id)}}">
-                        <img src="{{asset('public/frontend/images/product1.jpg')}}" alt="" />
+                        <!-- <img src="{{asset('public/frontend/images/product1.jpg')}}" alt="" /> -->
+                        <img src="{{URL::to('public/uploads/product/'.$item->product_image)}}" alt="" />
                         <h2>{{number_format($item->product_price).'vnđ'}}</h2>
                         <p>{{$item->product_name}}</p>
                     </a>
