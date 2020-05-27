@@ -17,6 +17,7 @@ Route::get('/danh-muc-san-pham/{id}', 'HomeController@show_category');
 Route::get('/dashboard', 'HomeController@show_dashboard');
 Route::get('/chi-tiet-san-pham/{id}','HomeController@show_detail');
 Route::get('Trang-chu','HomeController@index');
+Route::post('/tim-kiem','HomeController@search');
 
 //-------------------------------DANH MỤC SẢN PHẨM------------------------- */
 Route::get('/add-category', 'CateController@add_category');
