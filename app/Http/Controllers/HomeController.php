@@ -70,4 +70,12 @@ class HomeController extends Controller
                 ->with('data_brand', $data_brand)
                 ->with('relate', $sp_lienquan);
     }
+    public function search(Request $request){
+         $keywords = $request->keywords_submit;
+             $data_cate = CateModel::select('category_id', 'category_name')->get();
+             $data_brand = Brand::select('brand_id', 'brand_name')->get();
+              $search_product = DB::table('product')->where('product_name','like','%'.$keywords.'%')->get();
+        return view('pages.sanpham.search')->with('category',$data_cate)->with('brand',$data_brand)->with('search_product',$search_product);
+
+    }
 }

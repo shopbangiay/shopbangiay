@@ -16,6 +16,9 @@ Route::get('/','HomeController@index');
 Route::get('/danh-muc-san-pham/{id}', 'HomeController@show_category');
 Route::get('/dashboard', 'HomeController@show_dashboard');
 Route::get('/chi-tiet-san-pham/{id}','HomeController@show_detail');
+Route::get('Trang-chu','HomeController@index');
+Route::post('/tim-kiem','HomeController@search');
+
 
 //-------------------------------DANH MỤC SẢN PHẨM------------------------- */
 Route::get('/add-category', 'CateController@add_category');
@@ -53,8 +56,17 @@ Route::get('/delete-cart/{rowId}', 'CartController@delete_cart');
 
 // -------------------------------------------------------------------------
 
-//-------------------------------THANH TOÁN--------------------------------- */
+//----Đăng nhập vs Đăng xuất trước thanh toán và sau thanh toán---------- */
+Route::get('/login-checkout','CheckoutController@login_checkout');
+Route::get('/payment','CheckoutController@payment');
+Route::get('/checkout','CheckoutController@checkout');
+Route::get('/logout-checkout','CheckoutController@logout_checkout');
 
+
+Route::post('/add-customer','CheckoutController@add_customer');
+Route::post('/save-checkout-customer','CheckoutController@save_checkout_customer');
+Route::post('/login-customer','CheckoutController@login_customer');
+Route::post('/order-place','CheckoutController@order_place');
 // -------------------------------------------------------------------------
 
 //-------------------------------ĐẶT HÀNG----------------------------------- */
