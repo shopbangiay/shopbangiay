@@ -16,8 +16,10 @@ Route::get('/','HomeController@index');
 Route::get('/danh-muc-san-pham/{id}', 'HomeController@show_category');
 Route::get('/dashboard', 'HomeController@show_dashboard');
 Route::get('/chi-tiet-san-pham/{id}','HomeController@show_detail');
+
 Route::get('Trang-chu','HomeController@index');
 Route::post('/tim-kiem','HomeController@search');
+
 
 //-------------------------------DANH MỤC SẢN PHẨM------------------------- */
 Route::get('/add-category', 'CateController@add_category');
@@ -48,6 +50,10 @@ Route::post('/update-product/{id_product}', 'ProductController@update_product');
 // -------------------------------------------------------------------------
 
 //-------------------------------CART--------------------------------------- */
+Route::post('/save-cart', 'CartController@save_cart');
+Route::post('/update-cart-qty', 'CartController@update_cart_qty');
+Route::get('/show-cart', 'CartController@show_cart');
+Route::get('/delete-cart/{rowId}', 'CartController@delete_cart');
 
 // -------------------------------------------------------------------------
 

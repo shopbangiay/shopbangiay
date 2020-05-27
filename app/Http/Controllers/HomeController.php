@@ -30,24 +30,45 @@ class HomeController extends Controller
         
     
         $cate_id = Product::join('category_product as cate', 'product.category_id', 'cate.category_id')
+                            ->join('brand_product as brand', 'brand.brand_id', 'product.brand_id')
                             ->where('cate.category_id', $id)
-                            ->select('product.product_name', 'product.product_price')
+                            ->select('cate.category_id' ,'product.product_id' ,'product.product_name', 'product.product_image','product.product_price', 'product.product_desc', 'product.product_content', 'cate.category_name', 'brand.brand_name')
                             ->get();
-
-        $detail_sp = DB::table('product as sp')->join('category_product as cate', 'cate.category_id', '=', 'sp.category_id')
-                        ->where('sp.category_id', $id)->get();
-        return view('pages.category.show_category')->with('data_cate', $data_cate)->with('data_brand', $data_brand)->with('cate', $cate)->with('cate_id', $cate_id)->with('detail_sp', $detail_sp);
+        return view('pages.category.show_category')
+                ->with('data_cate', $data_cate)
+                ->with('data_brand', $data_brand)
+                ->with('cate', $cate)
+                ->with('cate_id', $cate_id);
     }
     public function show_dashboard(){
         return view('admin.master');
     }
     public function show_detail($id){
-        
-        $detail_sp = DB::table('product as sp')->join('category_product as cate', 'cate.category_id', '=', 'sp.category_id')
-                        ->where('sp.category_id', $id)
-                        ->select('sp.product_id' ,'sp.product_name', 'sp.product_image','sp.product_price', 'sp.product_desc', 'sp.product_content')
+        $data_cate = CateModel::select('category_id', 'category_name')->get();
+        $data_brand = Brand::select('brand_id', 'brand_name')->get();
+        $detail_sp = DB::table('product as sp')
+                        ->join('category_product as cate', 'cate.category_id', '=', 'sp.category_id')
+                        ->join('brand_product as brand', 'brand.brand_id', '=', 'sp.brand_id')
+                        ->where('sp.product_id', $id)
+                        ->select('cate.category_id' ,'sp.product_id' ,'sp.product_name', 'sp.product_image','sp.product_price', 'sp.product_desc', 'sp.product_content', 'cate.category_name', 'brand.brand_name')
                         ->get();
-        return view('pages.sanpham.show_details')->with('detail_sp', $detail_sp);
+        
+        foreach($detail_sp as $key => $value){
+            $get_cate_id = $value->category_id;
+        }
+
+        $sp_lienquan = DB::table('product as sp')
+                        ->join('category_product as cate', 'cate.category_id', '=', 'sp.category_id')
+                        ->join('brand_product as brand', 'brand.brand_id', '=', 'sp.brand_id')
+                        ->where('cate.category_id', $get_cate_id)
+                        ->whereNotIn('sp.product_id', [$id])
+                        ->get();
+        
+        return view('pages.sanpham.show_details')
+                ->with('detail_sp', $detail_sp)
+                ->with('data_cate', $data_cate)
+                ->with('data_brand', $data_brand)
+                ->with('relate', $sp_lienquan);
     }
     public function search(Request $request){
          $keywords = $request->keywords_submit;
