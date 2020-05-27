@@ -44,15 +44,19 @@
 			<img src="images/product-details/new.jpg" class="newarrival" alt="" />
 			<h2>{{$value_detail->product_name}}</h2>
 			<img src="images/product-details/rating.png" alt="" />
-			<span>
-				<span>{{number_format($value_detail->product_price).'vnđ'}}</span>
-				<label>Quantity:</label>
-				<input type="number" min="1" value="1" />
-				<button type="button" class="btn btn-fefault cart">
-					<i class="fa fa-shopping-cart"></i>
-					Thêm giỏ hàng
-				</button>
-			</span>
+			<form action="{{URL::to('/save-cart')}}" method="POST">
+				{{ csrf_field() }}
+				<span>
+					<span>{{number_format($value_detail->product_price).'vnđ'}}</span>
+					<label>Quantity:</label>
+					<input type="number" name="qty" min="1" value="1" />
+					<input type="hidden" name="productid_hidden" min="1" value="{{$value_detail->product_id}}" />
+					<button type="submit" class="btn btn-fefault cart">
+						<i class="fa fa-shopping-cart"></i>
+						Thêm giỏ hàng
+					</button>
+				</span>
+			</form>
 			<p><b>Danh mục:</b> {{$value_detail->category_name}}</p>
 			<p><b>Thương hiệu:</b> {{$value_detail->brand_name}}</p>
 			<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
