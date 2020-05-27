@@ -86,11 +86,40 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								{{-- <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> --}}
-								<li><a href="{{URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+								 <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-user"></i> Tài khoản</a></li>
+								<?php
+                                   $customer_id = Session::get('customer_id');
+                                   $shipping_id = Session::get('shipping_id');
+                                   if($customer_id!=NULL && $shipping_id==NULL){ 
+                                 ?>
+                                  <li><a href="{{URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+                                
+                                <?php
+                                 }elseif($customer_id!=NULL && $shipping_id!=NULL){
+                                 ?>
+                                 <li><a href="{{URL::to('/payment')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+                                 <?php 
+                                }else{
+                                ?>
+                                 <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+                                <?php
+                                 }
+                                ?>
 								<li><a href="{{URL::to('/list-cart')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
-								<li><a href="{{URL::to('/login')}}"><i class="fa fa-lock"></i> Đăng nhập</a></li>
+								 <?php
+                                   $customer_id = Session::get('customer_id');
+                                   if($customer_id!=NULL){ 
+                                 ?>
+                                  <li><a href="{{URL::to('/logout-checkout')}}"><i class="fa fa-lock"></i> Đăng xuất</a></li>
+                                
+                                <?php
+                            }else{
+                                 ?>
+                                 <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-lock"></i> Đăng nhập</a></li>
+                                 <?php 
+                             }
+                                 ?>
+
 							</ul>
 						</div>
 					</div>
