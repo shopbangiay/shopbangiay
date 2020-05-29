@@ -26,11 +26,11 @@
         <div class="form-group">
             <label>Category Status</label>
             <select name="txtStatus" class="form-control">
-                <option value="0">Hiện</option>
-                <option value="1">Ẩn</option>
+                <option value="0">Ẩn</option>
+                <option value="1">Hiện</option>
             </select>
         </div>
-        <button type="submit" name="save_category" class="btn btn-default">Category Add</button>
+        <button type="submit" name="save_category" class="btn btn-success">Category Add</button>
         <form>
         </div>
 @endsection
