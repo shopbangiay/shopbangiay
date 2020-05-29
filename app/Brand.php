@@ -8,7 +8,7 @@ class Brand extends Model
 {
     public $timestamps = false;
     
-    protected $fillable = ['brand_name', 'category_desc', 'category_status'];
+    protected $fillable = ['brand_name', 'brand_desc', 'brand_status'];
     
     protected $primaryKey = 'brand_id';
 

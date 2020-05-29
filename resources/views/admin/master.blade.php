@@ -108,10 +108,10 @@
                             <a href="#"><i class="fa fa-cube fa-fw"></i> Brand<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">List Brand</a>
+                                    <a href="{{URL::to('/all-brand')}}">List Brand</a>
                                 </li>
                                 <li>
-                                    <a href="#">Add Brand</a>
+                                    <a href="{{URL::to('/add-brand')}}">Add Brand</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

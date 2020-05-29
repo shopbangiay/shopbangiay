@@ -5,7 +5,7 @@
         <thead>
             <tr align="center">
                 <th>ID</th>
-                <th>Name</th>
+                <th>Tên Thương Hiệu </th>
                 <th>Status</th>
                 <th>Delete</th>
                 <th>Edit</th>
@@ -13,27 +13,27 @@
         </thead>
         <tbody>
             <?php $stt = 0 ?>
-            @foreach ($data_cate as $item)
+            @foreach ($data_brand as $item)
             <?php $stt = $stt + 1 ?>
             <tr class="odd gradeX" align="center">
                 <td>{{$stt}}</td>
-                <td>{{$item->category_name}}</td>
+                <td>{{$item->brand_name}}</td>
                 <td>
                     <?php
-                    if($item->category_status == 1){
+                    if($item->brand_status == 1){
                     ?>
-                    <a href="{{URL::to('/unactive-category/'.$item->category_id)}}"><span class="fa-thumb-styling  fa fa-thumbs-up"></span></a>
+                    <a href="{{URL::to('/unactive-brand/'.$item->brand_id)}}"><span class="fa-thumb-styling  fa fa-thumbs-up"></span></a>
                     <?php
                     }
                     else{
                     ?>
-                    <a href="{{URL::to('/active-category/'.$item->category_id)}}"><span class="fa-thumb-styling  fa fa-thumbs-down "></span></a>
+                    <a href="{{URL::to('/active-brand/'.$item->brand_id)}}"><span class="fa-thumb-styling  fa fa-thumbs-down "></span></a>
                     <?php
                     }    
                     ?>
                 </td>
-                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('/delete-category/'.$item->category_id)}}" onclick="return confirm('are you sure?')"> Delete</a></td>
-                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('/edit-category/'.$item->category_id)}}">Edit</a></td>
+                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('/delete-brand/'.$item->brand_id)}}" onclick="return confirm('are you sure?')"> Delete</a></td>
+                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('/edit-brand/'. $item->brand_id)}}">Edit</a></td>
             </tr>
             @endforeach
         </tbody>
