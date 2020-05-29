@@ -257,7 +257,7 @@
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
 									@foreach ($data_brand as $item)
-									<li><a href="#">{{$item->brand_name}}</a></li>
+									<li><a href="{{URL::to('/Thuong-Hieu/'. $item->brand_id)}}">{{$item->brand_name}}</a></li>
 									@endforeach
 								</ul>
 							</div>

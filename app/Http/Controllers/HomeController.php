@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\CateModel;
 use App\Brand;
 use App\Product;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -40,6 +41,21 @@ class HomeController extends Controller
                 ->with('cate', $cate)
                 ->with('cate_id', $cate_id);
     }
+    public function show_brand($brand_id){
+         $data_cate = CateModel::select('category_id', 'category_name')->get();
+        $data_brand = Brand::select('brand_id', 'brand_name')->get();
+        $brand = Brand::find($brand_id);
+    
+        $brand_by_id = Product::join('brand_product as brand', 'product.brand_id', 'brand.brand_id')
+                            ->where('brand.brand_id', $brand_id)
+                            ->select('product.product_name', 'product.product_price')
+                            ->get();
+
+
+
+                return view('pages.brand.show_brand')->with('data_cate', $data_cate)->with('data_brand', $data_brand)->with('brand', $brand)->with('brand_by_id', $brand_by_id);
+    }
+    
     public function show_dashboard(){
         return view('admin.master');
     }

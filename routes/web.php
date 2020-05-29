@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/','HomeController@index');
 Route::get('/danh-muc-san-pham/{id}', 'HomeController@show_category');
+// Route::get('/danh-muc-san-pham/{brand_id}', 'BrandProduct@show_brand');
 Route::get('/dashboard', 'HomeController@show_dashboard');
+
+Route::get('/Thuong-Hieu/{brand_id}', 'HomeController@show_brand');
+
 Route::get('/chi-tiet-san-pham/{id}','HomeController@show_detail');
 Route::get('Trang-chu','HomeController@index');
 Route::post('/tim-kiem','HomeController@search');
@@ -33,7 +37,15 @@ Route::post('/update-category/{id_cate}', 'CateController@update_category');
 // -------------------------------------------------------------------------
 
 //-------------------------------THƯƠNG HIỆU SẢN PHẨM----------------------- */
+Route::get('/add-brand', 'BrandController@add_brand');
+Route::get('/all-brand', 'BrandController@all_brand');
+Route::get('/edit-brand/{id_brand}', 'BrandController@edit_brand');
+Route::get('/delete-brand/{id_brand}', 'BrandController@delete_brand');
+Route::get('/unactive-brand/{id_brand}', 'BrandController@unactive_brand');
+Route::get('/active-brand/{id_brand}', 'BrandController@active_brand');
 
+Route::post('/save-brand', 'BrandController@save_brand');
+Route::post('/update-brand/{id_brand}', 'BrandController@update_brand');
 // -------------------------------------------------------------------------
 
 //-------------------------------SẢN PHẨM----------------------------------- */
