@@ -16,7 +16,13 @@ Route::get('/','HomeController@index');
 Route::get('/danh-muc-san-pham/{id}', 'HomeController@show_category');
 // Route::get('/danh-muc-san-pham/{brand_id}', 'BrandProduct@show_brand');
 Route::get('/dashboard', 'HomeController@show_dashboard');
+<<<<<<< HEAD
 Route::get('/Thuong-Hieu/{brand_id}', 'HomeController@show_brand');
+=======
+Route::get('/chi-tiet-san-pham/{id}','HomeController@show_detail');
+Route::get('Trang-chu','HomeController@index');
+Route::post('/tim-kiem','HomeController@search');
+>>>>>>> origin/login
 
 
 //-------------------------------DANH MỤC SẢN PHẨM------------------------- */
@@ -44,15 +50,36 @@ Route::post('/update-brand/{id_brand}', 'BrandController@update_brand');
 // -------------------------------------------------------------------------
 
 //-------------------------------SẢN PHẨM----------------------------------- */
+Route::get('/add-product', 'ProductController@add_product');
+Route::get('/all-product', 'ProductController@all_product');
+Route::get('/edit-product/{id_product}', 'ProductController@edit_product');
+Route::get('/delete-product/{id_product}', 'ProductController@delete_product');
+Route::get('/unactive-product/{id_product}', 'ProductController@unactive_product');
+Route::get('/active-product/{id_product}', 'ProductController@active_product');
 
+Route::post('/save-product', 'ProductController@save_product');
+Route::post('/update-product/{id_product}', 'ProductController@update_product');
 // -------------------------------------------------------------------------
 
 //-------------------------------CART--------------------------------------- */
+Route::post('/save-cart', 'CartController@save_cart');
+Route::post('/update-cart-qty', 'CartController@update_cart_qty');
+Route::get('/show-cart', 'CartController@show_cart');
+Route::get('/delete-cart/{rowId}', 'CartController@delete_cart');
 
 // -------------------------------------------------------------------------
 
-//-------------------------------THANH TOÁN--------------------------------- */
+//----Đăng nhập vs Đăng xuất trước thanh toán và sau thanh toán---------- */
+Route::get('/login-checkout','CheckoutController@login_checkout');
+Route::get('/payment','CheckoutController@payment');
+Route::get('/checkout','CheckoutController@checkout');
+Route::get('/logout-checkout','CheckoutController@logout_checkout');
 
+
+Route::post('/add-customer','CheckoutController@add_customer');
+Route::post('/save-checkout-customer','CheckoutController@save_checkout_customer');
+Route::post('/login-customer','CheckoutController@login_customer');
+Route::post('/order-place','CheckoutController@order_place');
 // -------------------------------------------------------------------------
 
 //-------------------------------ĐẶT HÀNG----------------------------------- */

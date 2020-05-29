@@ -57,7 +57,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="{{URL::to('/trang-chu')}}"><img src="{{asset('public/frontend/images/logo.png')}}" alt="" /></a>
+							<a href="{{URL::to('/')}}"><img src="{{asset('public/frontend/images/logo.png')}}" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							{{-- <div class="btn-group">
@@ -86,11 +86,40 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								{{-- <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> --}}
-								<li><a href="{{URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+								 <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-user"></i> Tài khoản</a></li>
+								<?php
+                                   $customer_id = Session::get('customer_id');
+                                   $shipping_id = Session::get('shipping_id');
+                                   if($customer_id!=NULL && $shipping_id==NULL){ 
+                                 ?>
+                                  <li><a href="{{URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+                                
+                                <?php
+                                 }elseif($customer_id!=NULL && $shipping_id!=NULL){
+                                 ?>
+                                 <li><a href="{{URL::to('/payment')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+                                 <?php 
+                                }else{
+                                ?>
+                                 <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+                                <?php
+                                 }
+                                ?>
 								<li><a href="{{URL::to('/list-cart')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
-								<li><a href="{{URL::to('/login')}}"><i class="fa fa-lock"></i> Đăng nhập</a></li>
+								 <?php
+                                   $customer_id = Session::get('customer_id');
+                                   if($customer_id!=NULL){ 
+                                 ?>
+                                  <li><a href="{{URL::to('/logout-checkout')}}"><i class="fa fa-lock"></i> Đăng xuất</a></li>
+                                
+                                <?php
+                            }else{
+                                 ?>
+                                 <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-lock"></i> Đăng nhập</a></li>
+                                 <?php 
+                             }
+                                 ?>
+
 							</ul>
 						</div>
 					</div>
@@ -101,7 +130,7 @@
 		<div class="header-bottom"><!--header-bottom-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-9">
+					<div class="col-sm-7">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 								<span class="sr-only">Toggle navigation</span>
@@ -112,7 +141,7 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="{{URL::to('/trang-chu')}}" class="active">Trang chủ</a></li>
+								<li><a href="{{URL::to('Trang-chu')}}" class="active">Trang chủ</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="{{URL::to('/product')}}">Sản phẩm</a></li>
@@ -128,10 +157,14 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
-						</div>
+					<div class="col-sm-5">
+						 <form action="{{URL::to('/tim-kiem')}}" method="POST">
+                            {{csrf_field()}}
+                        <div class="search_box pull-right">
+                            <input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm"/>
+                            <input type="submit" style="margin-top:0;color:#666" name="search_items" class="btn btn-primary btn-sm" value="Tìm kiếm">
+                        </div>
+                        </form>
 					</div>
 				</div>
 			</div>
@@ -229,8 +262,26 @@
 								</ul>
 							</div>
 						</div><!--/brands_products-->
-					</div>
+
+					<div class="products"><!--products-->
+							<h2>Sản Phẩm</h2>
+						<div class="panel-group category-products" id="accordian"><!--product-->
+							<div class="panel panel-default">
+								@foreach ($data_cate as $item)
+								<div class="panel-heading">
+									<h4 class="panel-title">
+									<a href="{{URL::to('/danh-muc-san-pham/'. $item->category_id)}}">{{$item->category_name}}</a>
+									<!-- <li><a href="{{URL::to('/add-product')}}">Thêm Sản Phẩm</a></li>
+									<li><a href="{{URL::to('/all-product')}}">Xem hết Sản Phẩm</a></li> -->
+									<li><a href=""></a></li>
+									</h4>
+								</div>
+								@endforeach
+							</div>
+						</div>
+					</div><!--products-->
 				</div>
+			</div>
 				<div class="col-sm-9 padding-right">
 					@yield('content')
 				</div>
@@ -403,6 +454,7 @@
 	<script src="{{asset('public/frontend/js/jquery.scrollUp.min.js')}}"></script>
 	<script src="{{asset('public/frontend/js/price-range.js')}}"></script>
     <script src="{{asset('public/frontend/js/jquery.prettyPhoto.js')}}"></script>
-    <script src="{{asset('public/frontend/js/main.js')}}"></script>
+	<script src="{{asset('public/frontend/js/main.js')}}"></script>
+	
 </body>
 </html>
