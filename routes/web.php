@@ -14,24 +14,52 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/','HomeController@index');
 Route::get('/danh-muc-san-pham/{id}', 'HomeController@show_category');
+// Route::get('/danh-muc-san-pham/{brand_id}', 'BrandProduct@show_brand');
 Route::get('/dashboard', 'HomeController@show_dashboard');
+
+Route::get('/Thuong-Hieu/{brand_id}', 'HomeController@show_brand');
+
 Route::get('/chi-tiet-san-pham/{id}','HomeController@show_detail');
 Route::get('Trang-chu','HomeController@index');
+Route::post('/tim-kiem','HomeController@search');
+
 
 //-------------------------------DANH MỤC SẢN PHẨM------------------------- */
-Route::get('/add-category', 'CateController@add_category');
-Route::get('/all-category', 'CateController@all_category');
-Route::get('/edit-category/{id_cate}', 'CateController@edit_category');
-Route::get('/delete-category/{id_cate}', 'CateController@delete_category');
-Route::get('/unactive-category/{id_cate}', 'CateController@unactive_category');
-Route::get('/active-category/{id_cate}', 'CateController@active_category');
+// Route::get('/add-category', 'CateController@add_category');
+// Route::get('/all-category', 'CateController@all_category');
+// Route::get('/edit-category/{id_cate}', 'CateController@edit_category');
+// Route::get('/delete-category/{id_cate}', 'CateController@delete_category');
+// Route::get('/unactive-category/{id_cate}', 'CateController@unactive_category');
+// Route::get('/active-category/{id_cate}', 'CateController@active_category');
 
-Route::post('/save-category', 'CateController@save_category');
-Route::post('/update-category/{id_cate}', 'CateController@update_category');
+// Route::post('/save-category', 'CateController@save_category');
+// Route::post('/update-category/{id_cate}', 'CateController@update_category');
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::group(['prefix' => 'cate'], function () {
+        Route::get('/add-category', 'CateController@add_category');
+        Route::get('/all-category', 'CateController@all_category');
+        Route::get('/edit-category/{id_cate}', 'CateController@edit_category');
+        Route::get('/delete-category/{id_cate}', 'CateController@delete_category');
+        Route::get('/unactive-category/{id_cate}', 'CateController@unactive_category');
+        Route::get('/active-category/{id_cate}', 'CateController@active_category');
+
+        Route::post('/save-category', 'CateController@save_category');
+        Route::post('/update-category/{id_cate}', 'CateController@update_category');
+    });
+});
 // -------------------------------------------------------------------------
 
 //-------------------------------THƯƠNG HIỆU SẢN PHẨM----------------------- */
+Route::get('/add-brand', 'BrandController@add_brand');
+Route::get('/all-brand', 'BrandController@all_brand');
+Route::get('/edit-brand/{id_brand}', 'BrandController@edit_brand');
+Route::get('/delete-brand/{id_brand}', 'BrandController@delete_brand');
+Route::get('/unactive-brand/{id_brand}', 'BrandController@unactive_brand');
+Route::get('/active-brand/{id_brand}', 'BrandController@active_brand');
 
+Route::post('/save-brand', 'BrandController@save_brand');
+Route::post('/update-brand/{id_brand}', 'BrandController@update_brand');
 // -------------------------------------------------------------------------
 
 //-------------------------------SẢN PHẨM----------------------------------- */
@@ -47,11 +75,24 @@ Route::post('/update-product/{id_product}', 'ProductController@update_product');
 // -------------------------------------------------------------------------
 
 //-------------------------------CART--------------------------------------- */
+Route::post('/save-cart', 'CartController@save_cart');
+Route::post('/update-cart-qty', 'CartController@update_cart_qty');
+Route::get('/show-cart', 'CartController@show_cart');
+Route::get('/delete-cart/{rowId}', 'CartController@delete_cart');
 
 // -------------------------------------------------------------------------
 
-//-------------------------------THANH TOÁN--------------------------------- */
+//----Đăng nhập vs Đăng xuất trước thanh toán và sau thanh toán---------- */
+Route::get('/login-checkout','CheckoutController@login_checkout');
+Route::get('/payment','CheckoutController@payment');
+Route::get('/checkout','CheckoutController@checkout');
+Route::get('/logout-checkout','CheckoutController@logout_checkout');
 
+
+Route::post('/add-customer','CheckoutController@add_customer');
+Route::post('/save-checkout-customer','CheckoutController@save_checkout_customer');
+Route::post('/login-customer','CheckoutController@login_customer');
+Route::post('/order-place','CheckoutController@order_place');
 // -------------------------------------------------------------------------
 
 //-------------------------------ĐẶT HÀNG----------------------------------- */

@@ -96,10 +96,10 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Category<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{URL::to('/all-category')}}">List Category</a>
+                                    <a href="{{URL::to('admin/cate/all-category')}}">List Category</a>
                                 </li>
                                 <li>
-                                <a href="{{URL::to('/add-category')}}">Add Category</a>
+                                <a href="{{URL::to('admin/cate/add-category')}}">Add Category</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -108,10 +108,10 @@
                             <a href="#"><i class="fa fa-cube fa-fw"></i> Brand<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">List Brand</a>
+                                    <a href="{{URL::to('/all-brand')}}">List Brand</a>
                                 </li>
                                 <li>
-                                    <a href="#">Add Brand</a>
+                                    <a href="{{URL::to('/add-brand')}}">Add Brand</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -120,10 +120,10 @@
                             <a href="#"><i class="fa fa-cube fa-fw"></i> Sản Phẩm<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{URL::to('/all-product')}}">Danh sách sản phẩm</a>
+                                    <a href="{{URL::to('all-product')}}">Danh sách sản phẩm</a>
                                 </li>
                                 <li>
-                                    <a href="{{URL::to('/add-product')}}">Thêm sản phẩm</a>
+                                    <a href="{{URL::to('add-product')}}">Thêm sản phẩm</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

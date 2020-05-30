@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('controller', 'Cate')
+@section('controller', 'Brand')
 @section('action', 'Add')
 @section('content')
 <!-- /.col-lg-12 -->
@@ -13,24 +13,24 @@
         </ul>
     </div>
     @endif
-    <form action="{{URL::to('/save-category')}}" method="POST">
+    <form action="{{URL::to('/save-brand')}}" method="POST">
         {{ csrf_field() }}
         <div class="form-group">
-            <label>Category Name</label>
-            <input class="form-control" name="txtCateName" placeholder="Please Enter Category Name" />
+            <label>Brand Name</label>
+            <input class="form-control" name="txtBrandName" placeholder="Please Enter Brand Name" />
         </div>
         <div class="form-group">
-            <label>Category Description</label>
+            <label>Brand Description</label>
             <textarea class="form-control" rows="3" name="txtDescription"></textarea>
         </div>
         <div class="form-group">
-            <label>Category Status</label>
+            <label>Brand Status</label>
             <select name="txtStatus" class="form-control">
-                <option value="0">Ẩn</option>
-                <option value="1">Hiện</option>
+                <option value="0">Hiện</option>
+                <option value="1">Ẩn</option>
             </select>
         </div>
-        <button type="submit" name="save_category" class="btn btn-success">Category Add</button>
+        <button type="submit" name="save_brand" class="btn btn-success">Brand Add</button>
         <form>
         </div>
 @endsection

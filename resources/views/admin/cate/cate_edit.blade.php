@@ -13,7 +13,7 @@
                 </ul>
             </div>
         @endif
-        <form action="{{URL::to('/update-category/'.$edit_cate->category_id)}}" method="POST">
+        <form action="{{URL::to('admin/cate/update-category/'.$edit_cate->category_id)}}" method="POST">
             {{csrf_field()}}
             <div class="form-group">
             <label>Category Name</label>
@@ -23,15 +23,19 @@
             <label>Category Description</label>
             <textarea class="form-control" rows="3" name="txtDescription" value="">{{$edit_cate->category_desc}}</textarea>
         </div>
-        {{-- <div class="form-group">
+        <div class="form-group">
             <label>Category Status</label>
             <select name="txtStatus" class="form-control">
-                
+                @if($edit_cate->category_status == 0)
                 <option value="{{$edit_cate->category_status}}">Ẩn</option>
                 <option value="1">Hiện</option>
+                @else
+                <option value="{{$edit_cate->category_status}}">Hiện</option>
+                <option value="0">Ẩn</option>
+                @endif
             </select>
-        </div> --}}
-        <button type="submit" name="update_category" class="btn btn-default">Category Update</button>
+        </div>
+        <button type="submit" name="update_category" class="btn btn-success">Category Update</button>
         <form>
     </div>
 @endsection

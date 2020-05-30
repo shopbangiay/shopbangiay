@@ -57,7 +57,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="{{URL::to('/trang-chu')}}"><img src="{{asset('public/frontend/images/logo.png')}}" alt="" /></a>
+							<a href="{{URL::to('/')}}"><img src="{{asset('public/frontend/images/logo.png')}}" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							{{-- <div class="btn-group">
@@ -86,11 +86,40 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								{{-- <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> --}}
-								<li><a href="{{URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+								 <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-user"></i> Tài khoản</a></li>
+								<?php
+                                   $customer_id = Session::get('customer_id');
+                                   $shipping_id = Session::get('shipping_id');
+                                   if($customer_id!=NULL && $shipping_id==NULL){ 
+                                 ?>
+                                  <li><a href="{{URL::to('/checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+                                
+                                <?php
+                                 }elseif($customer_id!=NULL && $shipping_id!=NULL){
+                                 ?>
+                                 <li><a href="{{URL::to('/payment')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+                                 <?php 
+                                }else{
+                                ?>
+                                 <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-crosshairs"></i> Thanh toán</a></li>
+                                <?php
+                                 }
+                                ?>
 								<li><a href="{{URL::to('/list-cart')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
-								<li><a href="{{URL::to('/login')}}"><i class="fa fa-lock"></i> Đăng nhập</a></li>
+								 <?php
+                                   $customer_id = Session::get('customer_id');
+                                   if($customer_id!=NULL){ 
+                                 ?>
+                                  <li><a href="{{URL::to('/logout-checkout')}}"><i class="fa fa-lock"></i> Đăng xuất</a></li>
+                                
+                                <?php
+                            }else{
+                                 ?>
+                                 <li><a href="{{URL::to('/login-checkout')}}"><i class="fa fa-lock"></i> Đăng nhập</a></li>
+                                 <?php 
+                             }
+                                 ?>
+
 							</ul>
 						</div>
 					</div>
@@ -101,7 +130,7 @@
 		<div class="header-bottom"><!--header-bottom-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-9">
+					<div class="col-sm-7">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 								<span class="sr-only">Toggle navigation</span>
@@ -128,10 +157,14 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
-						</div>
+					<div class="col-sm-5">
+						 <form action="{{URL::to('/tim-kiem')}}" method="POST">
+                            {{csrf_field()}}
+                        <div class="search_box pull-right">
+                            <input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm"/>
+                            <input type="submit" style="margin-top:0;color:#666" name="search_items" class="btn btn-primary btn-sm" value="Tìm kiếm">
+                        </div>
+                        </form>
 					</div>
 				</div>
 			</div>
@@ -224,7 +257,7 @@
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
 									@foreach ($data_brand as $item)
-									<li><a href="#">{{$item->brand_name}}</a></li>
+									<li><a href="{{URL::to('/Thuong-Hieu/'. $item->brand_id)}}">{{$item->brand_name}}</a></li>
 									@endforeach
 								</ul>
 							</div>
@@ -421,6 +454,7 @@
 	<script src="{{asset('public/frontend/js/jquery.scrollUp.min.js')}}"></script>
 	<script src="{{asset('public/frontend/js/price-range.js')}}"></script>
     <script src="{{asset('public/frontend/js/jquery.prettyPhoto.js')}}"></script>
-    <script src="{{asset('public/frontend/js/main.js')}}"></script>
+	<script src="{{asset('public/frontend/js/main.js')}}"></script>
+	
 </body>
 </html>
