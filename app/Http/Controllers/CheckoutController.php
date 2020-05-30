@@ -54,7 +54,11 @@ class CheckoutController extends Controller
     }
     public function payment(Request $request){
         
+<<<<<<< HEAD
      		 $data_cate = CateModel::select('category_id', 'category_name')->get();
+=======
+     		$data_cate = CateModel::select('category_id', 'category_name')->get();
+>>>>>>> 7e56df48fb4250164d1da88b1dcf973efc444b6b
             $data_brand = Brand::select('brand_id', 'brand_name')->get(); 
 
      	 return view('pages.checkout.payment')->with('data_cate',$data_cate)->with('data_brand',$data_brand);
@@ -128,8 +132,13 @@ class CheckoutController extends Controller
 
            
      		 $data_cate = CateModel::select('category_id', 'category_name')->get();
+<<<<<<< HEAD
                 $data_brand = Brand::select('brand_id', 'brand_name')->get();  
             return view('pages.checkout.handcash')->with('data_cate',$data_cate)->with('data_brand',$data_brand);
+=======
+        $data_brand = Brand::select('brand_id', 'brand_name')->get();  
+            return view('pages.checkout.handcash')->with('data_cate',$data_cate)->with('brand',$data_brand);
+>>>>>>> 7e56df48fb4250164d1da88b1dcf973efc444b6b
 
         }else{
             Cart::destroy();
@@ -141,7 +150,7 @@ class CheckoutController extends Controller
 
         }
         
-        //return Redirect::to('/payment');
+        return Redirect::to('/payment');
     }
     	
 }

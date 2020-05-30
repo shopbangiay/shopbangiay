@@ -48,32 +48,30 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/save-category', 'CateController@save_category');
         Route::post('/update-category/{id_cate}', 'CateController@update_category');
     });
+    Route::group(['prefix' => 'brand'], function () {
+        Route::get('/add-brand', 'BrandController@add_brand');
+        Route::get('/all-brand', 'BrandController@all_brand');
+        Route::get('/edit-brand/{id_brand}', 'BrandController@edit_brand');
+        Route::get('/delete-brand/{id_brand}', 'BrandController@delete_brand');
+        Route::get('/unactive-brand/{id_brand}', 'BrandController@unactive_brand');
+        Route::get('/active-brand/{id_brand}', 'BrandController@active_brand');
+
+        Route::post('/save-brand', 'BrandController@save_brand');
+        Route::post('/update-brand/{id_brand}', 'BrandController@update_brand');
+    });
+    Route::group(['prefix' => 'product'], function () {
+        Route::get('/add-product', 'ProductController@add_product');
+        Route::get('/all-product', 'ProductController@all_product');
+        Route::get('/edit-product/{id_product}', 'ProductController@edit_product');
+        Route::get('/delete-product/{id_product}', 'ProductController@delete_product');
+        Route::get('/unactive-product/{id_product}', 'ProductController@unactive_product');
+        Route::get('/active-product/{id_product}', 'ProductController@active_product');
+
+        Route::post('/save-product', 'ProductController@save_product');
+        Route::post('/update-product/{id_product}', 'ProductController@update_product');
+    });
 });
-// -------------------------------------------------------------------------
 
-//-------------------------------THƯƠNG HIỆU SẢN PHẨM----------------------- */
-Route::get('/add-brand', 'BrandController@add_brand');
-Route::get('/all-brand', 'BrandController@all_brand');
-Route::get('/edit-brand/{id_brand}', 'BrandController@edit_brand');
-Route::get('/delete-brand/{id_brand}', 'BrandController@delete_brand');
-Route::get('/unactive-brand/{id_brand}', 'BrandController@unactive_brand');
-Route::get('/active-brand/{id_brand}', 'BrandController@active_brand');
-
-Route::post('/save-brand', 'BrandController@save_brand');
-Route::post('/update-brand/{id_brand}', 'BrandController@update_brand');
-// -------------------------------------------------------------------------
-
-//-------------------------------SẢN PHẨM----------------------------------- */
-Route::get('/add-product', 'ProductController@add_product');
-Route::get('/all-product', 'ProductController@all_product');
-Route::get('/edit-product/{id_product}', 'ProductController@edit_product');
-Route::get('/delete-product/{id_product}', 'ProductController@delete_product');
-Route::get('/unactive-product/{id_product}', 'ProductController@unactive_product');
-Route::get('/active-product/{id_product}', 'ProductController@active_product');
-
-Route::post('/save-product', 'ProductController@save_product');
-Route::post('/update-product/{id_product}', 'ProductController@update_product');
-// -------------------------------------------------------------------------
 
 //-------------------------------CART--------------------------------------- */
 Route::post('/save-cart', 'CartController@save_cart');

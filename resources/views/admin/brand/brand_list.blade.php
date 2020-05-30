@@ -22,18 +22,18 @@
                     <?php
                     if($item->brand_status == 1){
                     ?>
-                    <a href="{{URL::to('/unactive-brand/'.$item->brand_id)}}"><span class="fa-thumb-styling  fa fa-thumbs-up"></span></a>
+                    <a href="{{URL::to('admin/brand/unactive-brand/'.$item->brand_id)}}"><span class="fa-thumb-styling  fa fa-thumbs-up"></span></a>
                     <?php
                     }
                     else{
                     ?>
-                    <a href="{{URL::to('/active-brand/'.$item->brand_id)}}"><span class="fa-thumb-styling  fa fa-thumbs-down "></span></a>
+                    <a href="{{URL::to('admin/brand/active-brand/'.$item->brand_id)}}"><span class="fa-thumb-styling  fa fa-thumbs-down "></span></a>
                     <?php
                     }    
                     ?>
                 </td>
-                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('/delete-brand/'.$item->brand_id)}}" onclick="return confirm('are you sure?')"> Delete</a></td>
-                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('/edit-brand/'. $item->brand_id)}}">Edit</a></td>
+                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('admin/brand/delete-brand/'.$item->brand_id)}}" onclick="return confirm('are you sure?')"> Delete</a></td>
+                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('admin/brand/edit-brand/'. $item->brand_id)}}">Edit</a></td>
             </tr>
             @endforeach
         </tbody>

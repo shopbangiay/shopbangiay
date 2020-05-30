@@ -15,7 +15,7 @@
     @endif
 
     @foreach($edit_product as $pro)
-    <form action="{{URL::to('/update-product/'.$pro->product_id)}}" method="POST">
+    <form action="{{URL::to('admin/product/update-product/'.$pro->product_id)}}" method="POST">
         {{ csrf_field() }}
         <div class="form-group">
             <label>Tên Sản Phẩm</label>

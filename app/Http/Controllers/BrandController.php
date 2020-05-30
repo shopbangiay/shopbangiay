@@ -22,15 +22,15 @@ class BrandController extends Controller
         $brand->brand_status = $request->txtStatus;
 
         $brand->save();
-        return Redirect::to('all-brand')->with(['flash_level' => 'success','flash_message' => 'Thêm thành công']);
+        return Redirect::to('admin/brand/all-brand')->with(['flash_level' => 'success','flash_message' => 'Thêm thành công']);
     }
     public function unactive_brand($brand_id){
         $unactive = Brand::where('brand_id', $brand_id)->update(['brand_status' => 0]);
-        return Redirect::to('all-brand')->with(['flash_level' => 'success', 'flash_message' => 'Cập nhật trạng thái Ẩn thành công']);
+        return Redirect::to('admin/brand/all-brand')->with(['flash_level' => 'success', 'flash_message' => 'Cập nhật trạng thái Ẩn thành công']);
     }
     public function active_brand($brand_id){
         $active = Brand::where('brand_id', $brand_id)->update(['brand_status' => 1]);
-        return Redirect::to('all-brand')->with(['flash_level' => 'success', 'flash_message' => 'Cập nhật trạng thái Hiện thành công']);
+        return Redirect::to('admin/brand/all-brand')->with(['flash_level' => 'success', 'flash_message' => 'Cập nhật trạng thái Hiện thành công']);
     }
     public function edit_brand($brand_id){
         $edit_brand = Brand::find($brand_id);
@@ -43,11 +43,11 @@ class BrandController extends Controller
         $update_brand->brand_desc = $request->txtDescription;
 
         $update_brand->save();
-        return Redirect::to('all-brand')->with(['flash_level' => 'success', 'flash_message' => 'Cập nhập thương hiệu thành công']);
+        return Redirect::to('admin/brand/all-brand')->with(['flash_level' => 'success', 'flash_message' => 'Cập nhập thương hiệu thành công']);
     }
     public function delete_brand($brand_id){
         $del_brand = Brand::find($brand_id);
         $del_brand->delete();
-        return Redirect::to('all-brand')->with(['flash_level' => 'success', 'flash_message' => 'Xóa thương hiệu thành công']);
+        return Redirect::to('admin/brand/all-brand')->with(['flash_level' => 'success', 'flash_message' => 'Xóa thương hiệu thành công']);
     }
 }

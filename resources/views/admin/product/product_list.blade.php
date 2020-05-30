@@ -30,20 +30,20 @@
                     <?php
                     if($item->product_status == 1){
                     ?>
-                    <a href="{{URL::to('/unactive-product/'.$item->product_id)}}">
+                    <a href="{{URL::to('admin/product/unactive-product/'.$item->product_id)}}">
                     <span class="fa-thumb-styling  fa fa-thumbs-up"></span></a>
                     <?php
                     }
                     else{
                     ?>
-                    <a href="{{URL::to('/active-product/'.$item->product_id)}}">
+                    <a href="{{URL::to('admin/product/active-product/'.$item->product_id)}}">
                     <span class="fa-thumb-styling  fa fa-thumbs-down "></span></a>
                     <?php
                     }    
                     ?>
                 </td>
-                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('/delete-product/'.$item->product_id)}}"> Delete</a></td>
-                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('/edit-product/'.$item->product_id)}}">Edit</a></td>
+                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('admin/product/delete-product/'.$item->product_id)}}"> Delete</a></td>
+                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('admin/product/edit-product/'.$item->product_id)}}">Edit</a></td>
             </tr>
             @endforeach
         </tbody>
