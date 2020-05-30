@@ -37,16 +37,16 @@ class CateController extends Controller
             $cate->save(['category_status' => '1']);
         }
         $cate->save();
-        return Redirect::to('all-category')->with(['flash_level' => 'success','flash_message' => 'Thêm thành công']);
+        return Redirect::to('admin/cate/all-category')->with(['flash_level' => 'success','flash_message' => 'Thêm thành công']);
         // return redirect()->route('admin.cate.list')->with(['flash_level' => 'success','flash_message' => 'Thêm thành công']);
     }
     public function unactive_category($category_id){
         $unactive = CateModel::where('category_id', $category_id)->update(['category_status' => 0]);
-        return Redirect::to('all-category')->with(['flash_level' => 'success', 'flash_message' => 'Cập nhật trạng thái Ẩn thành công']);
+        return Redirect::to('admin/cate/all-category')->with(['flash_level' => 'success', 'flash_message' => 'Cập nhật trạng thái Ẩn thành công']);
     }
     public function active_category($category_id){
         $active = CateModel::where('category_id', $category_id)->update(['category_status' => 1]);
-        return Redirect::to('all-category')->with(['flash_level' => 'success', 'flash_message' => 'Cập nhật trạng thái Hiện thành công']);
+        return Redirect::to('admin/cate/all-category')->with(['flash_level' => 'success', 'flash_message' => 'Cập nhật trạng thái Hiện thành công']);
     }
 
 
@@ -67,13 +67,13 @@ class CateController extends Controller
         }
 
         $update_cate->save();
-        return Redirect::to('all-category')->with(['flash_level' => 'success', 'flash_message' => 'Cập nhật danh mục thành công']);
+        return Redirect::to('admin/cate/all-category')->with(['flash_level' => 'success', 'flash_message' => 'Cập nhật danh mục thành công']);
     }
 
     public function delete_category($category_id){
         $del_cate = CateModel::find($category_id);
         $del_cate->delete();
-        return Redirect::to('all-category')->with(['flash_level' => 'success', 'flash_message' => 'Xóa danh mục thành công']);
+        return Redirect::to('admin/cate/all-category')->with(['flash_level' => 'success', 'flash_message' => 'Xóa danh mục thành công']);
     }
         
     // }

@@ -256,9 +256,15 @@
 							<h2>Thương hiệu</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
+<<<<<<< HEAD
 									
 									<li><a href="#"></a></li>
 									
+=======
+									@foreach ($data_brand as $item)
+									<li><a href="{{URL::to('/Thuong-Hieu/'. $item->brand_id)}}">{{$item->brand_name}}</a></li>
+									@endforeach
+>>>>>>> 7db3e69ca3c9833a6199fc2945725872621c2846
 								</ul>
 							</div>
 						</div><!--/brands_products-->
