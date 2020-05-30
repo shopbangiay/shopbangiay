@@ -13,7 +13,7 @@
         </ul>
     </div>
     @endif
-    <form action="{{URL::to('/update-brand/'.$edit_brand->brand_id)}}" method="POST">
+    <form action="{{URL::to('admin/brand/update-brand/'.$edit_brand->brand_id)}}" method="POST">
         {{ csrf_field() }}
         <div class="form-group">
             <label>Brand Name</label>

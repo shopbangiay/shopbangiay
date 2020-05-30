@@ -40,17 +40,10 @@ class HomeController extends Controller
                 ->with('data_cate', $data_cate)
                 ->with('data_brand', $data_brand)
                 ->with('cate', $cate)
-                ->with('cate_id', $cate_id)
-
-                            ->get();
-        return view('pages.category.show_category')
-                ->with('data_cate', $data_cate)
-                ->with('data_brand', $data_brand)
-                ->with('cate', $cate)
                 ->with('cate_id', $cate_id);
     }
     public function show_brand($brand_id){
-         $data_cate = CateModel::select('category_id', 'category_name')->get();
+        $data_cate = CateModel::select('category_id', 'category_name')->get();
         $data_brand = Brand::select('brand_id', 'brand_name')->get();
         $brand = Brand::find($brand_id);
     
@@ -62,7 +55,6 @@ class HomeController extends Controller
 
 
                 return view('pages.brand.show_brand')->with('data_cate', $data_cate)->with('data_brand', $data_brand)->with('brand', $brand)->with('brand_by_id', $brand_by_id);
-
     }
     
     public function show_dashboard(){
@@ -100,7 +92,7 @@ class HomeController extends Controller
              $data_cate = CateModel::select('category_id', 'category_name')->get();
              $data_brand = Brand::select('brand_id', 'brand_name')->get();
               $search_product = DB::table('product')->where('product_name','like','%'.$keywords.'%')->get();
-        return view('pages.sanpham.search')->with('category',$data_cate)->with('brand',$data_brand)->with('search_product',$search_product);
+        return view('pages.sanpham.search')->with('data_cate',$data_cate)->with('data_brand',$data_brand)->with('search_product',$search_product);
 
     }
 }

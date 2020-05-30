@@ -21,36 +21,18 @@
 						<div class="bill-to">
 							<p>Điền thông tin gửi hàng</p>
 							<div class="form-one">
-							<form action="{{URL::to('/save-checkout-customer')}}" method="POST">
-								{{ csrf_field() }}	
-						<input type="text" name="shipping_email"placeholder="Điền email">
-						<input type="text" name="shipping_name"placeholder="Họ và tên người gửi">
-						<input type="text" name="shipping_address" placeholder="Địa chỉ gửi hàng">
-						<input type="text" name="shipping_phone"  placeholder="Số điện thoại">
-						<textarea name="shipping_notes"  placeholder="Ghi chú đơn hàng của bạn" rows="5"></textarea>
-						<input type="submit" value="Xác nhận" name="send_order" class="btn btn-primary btn-sm">
-									 </form>
-									
-									
-									
-
-									
-									
-									
-			
-								
-		                             
-                                  
-                   
-                                
-                               
-                               
-                         
-							</div>
-							
+								<form action="{{URL::to('/save-checkout-customer')}}" method="POST">
+									{{ csrf_field() }}	
+									<input type="text" name="shipping_email"placeholder="Điền email">
+									<input type="text" name="shipping_name"placeholder="Họ và tên người gửi">
+									<input type="text" name="shipping_address" placeholder="Địa chỉ gửi hàng">
+									<input type="text" name="shipping_phone"  placeholder="Số điện thoại">
+									<textarea name="shipping_notes"  placeholder="Ghi chú đơn hàng của bạn" rows="5"></textarea>
+									<input type="submit" value="Xác nhận" name="send_order" class="btn btn-primary btn-sm">
+								</form>
+							</div>	
 						</div>
 					</div>
-		
 					</div>
 									
 				</div>

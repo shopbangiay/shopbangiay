@@ -105,7 +105,7 @@
                                 <?php
                                  }
                                 ?>
-								<li><a href="{{URL::to('/list-cart')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
+								<li><a href="{{URL::to('/show-cart')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
 								 <?php
                                    $customer_id = Session::get('customer_id');
                                    if($customer_id!=NULL){ 
@@ -147,7 +147,7 @@
                                         <li><a href="{{URL::to('/product')}}">Sản phẩm</a></li>
 										<li><a href="{{URL::to('/product-detail')}}">Sản phẩm chi tiết</a></li> 
 										<li><a href="{{URL::to('/checkout')}}">Thanh toán</a></li> 
-										<li><a href="{{URL::to('/list-cart')}}">Giỏ hàng</a></li> 
+										<li><a href="{{URL::to('/show-cart')}}">Giỏ hàng</a></li> 
 										{{-- <li><a href="login.html">Login</a></li>  --}}
                                     </ul>
                                 </li> 
@@ -244,19 +244,20 @@
 						<h2>Danh mục</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<div class="panel panel-default">
-								
+								@foreach ($data_cate as $item)
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="{{URL::to('/danh-muc-san-pham/')}}"></a></h4>
+									<h4 class="panel-title"><a href="{{URL::to('/danh-muc-san-pham/'. $item->category_id)}}">{{$item->category_name}}</a></h4>
 								</div>
-								
+								@endforeach
 							</div>
 						</div><!--/category-products-->
 					
 						<div class="brands_products"><!--brands_products-->
 							<h2>Thương hiệu</h2>
 							<div class="brands-name">
-								<ul class="nav nav-pills nav-stacked">	
-									<li><a href="#"></a></li>
+
+								<ul class="nav nav-pills nav-stacked">
+
 									@foreach ($data_brand as $item)
 									<li><a href="{{URL::to('/Thuong-Hieu/'. $item->brand_id)}}">{{$item->brand_name}}</a></li>
 									@endforeach
@@ -265,20 +266,20 @@
 							</div>
 						</div><!--/brands_products-->
 
-					<div class="products"><!--products-->
+						<div class="products"><!--products-->
 							<h2>Sản Phẩm</h2>
 						<div class="panel-group category-products" id="accordian"><!--product-->
 							<div class="panel panel-default">
-								
+								@foreach ($data_cate as $item)
 								<div class="panel-heading">
 									<h4 class="panel-title">
-									<a href="{{URL::to('/danh-muc-san-pham/')}}"></a>
-									<li><a href="{{URL::to('/add-product')}}">Thêm Sản Phẩm</a></li>
-									<li><a href="{{URL::to('/all-product')}}">Xem hết Sản Phẩm</a></li>
+									<a href="{{URL::to('/danh-muc-san-pham/'. $item->category_id)}}">{{$item->category_name}}</a>
+									<!-- <li><a href="{{URL::to('/add-product')}}">Thêm Sản Phẩm</a></li>
+									<li><a href="{{URL::to('/all-product')}}">Xem hết Sản Phẩm</a></li> -->
 									<li><a href=""></a></li>
 									</h4>
 								</div>
-								
+								@endforeach
 							</div>
 						</div>
 					</div><!--products-->
