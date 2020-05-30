@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\CateModel;
 use App\Brand;
 use DB;
+use Cart;
 use Session;
 use App\Product;
 use Illuminate\Http\Request;
@@ -52,9 +53,9 @@ class CheckoutController extends Controller
     	return Redirect::to('/payment');
     }
      public function payment(Request $request){
-
-     		 $data_cate = CateModel::select('category_id', 'category_name')->get();
-        $data_brand = Brand::select('brand_id', 'brand_name')->get(); 
+        
+     		  $data_cate = CateModel::select('category_id', 'category_name')->get();
+                $data_brand = Brand::select('brand_id', 'brand_name')->get(); 
 
      	 return view('pages.checkout.payment')->with('category',$data_cate)->with('brand',$data_brand);
        
@@ -91,7 +92,7 @@ class CheckoutController extends Controller
         //--seo 
         $data = array();
         $data['payment_method'] = $request->payment_option;
-        $data['payment_status'] = 'Đang chờ xử lý';
+        $data['payment_status'] = '0';
         $payment_id = DB::table('payment')->insert($data);
 
         //insert order
@@ -110,8 +111,8 @@ class CheckoutController extends Controller
             $order_d_data['product_id'] = $v_content->id;
             $order_d_data['product_name'] = $v_content->name;
             $order_d_data['product_price'] = $v_content->price;
-            $order_d_data['product_sales_quantity'] = $v_content->qty;
-            DB::table('order_details')->insert($order_d_data);
+            $order_d_data['product_quantity'] = $v_content->qty;
+            DB::table('order_detail')->insert($order_d_data);
         }
         if($data['payment_method']==1){
 

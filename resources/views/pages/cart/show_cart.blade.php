@@ -1,5 +1,10 @@
 @extends('layout')
 @section('content')
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7db3e69ca3c9833a6199fc2945725872621c2846
 	<section id="cart_items">
 		<div class="container">
 			<div class="breadcrumbs">
@@ -248,4 +253,8 @@
         </div>
     </div>
 </section><!--/#do_action-->
+<<<<<<< HEAD
+>>>>>>> dbf0e61882598c36832d3f2dbdead3dfab849636
+=======
+>>>>>>> 7db3e69ca3c9833a6199fc2945725872621c2846
 @endsection
