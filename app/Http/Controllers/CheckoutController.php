@@ -52,10 +52,10 @@ class CheckoutController extends Controller
     	
     	return Redirect::to('/payment');
     }
-     public function payment(Request $request){
-        
+    public function payment(Request $request){
+
      		$data_cate = CateModel::select('category_id', 'category_name')->get();
-            $data_brand = Brand::select('brand_id', 'brand_name')->get(); 
+        $data_brand = Brand::select('brand_id', 'brand_name')->get(); 
 
      	 return view('pages.checkout.payment')->with('data_cate',$data_cate)->with('data_brand',$data_brand);
        
@@ -116,18 +116,28 @@ class CheckoutController extends Controller
         }
         if($data['payment_method']==1){
 
-            echo 'Thanh toán thẻ ATM';
+            Cart::destroy();
+
+           
+             $data_cate = CateModel::select('category_id', 'category_name')->get();
+                $data_brand = Brand::select('brand_id', 'brand_name')->get();  
+            return view('pages.checkout.handcash')->with('data_cate',$data_cate)->with('data_brand',$data_brand);
 
         }elseif($data['payment_method']==2){
             Cart::destroy();
 
            
      		 $data_cate = CateModel::select('category_id', 'category_name')->get();
-        $data_brand = Brand::select('brand_id', 'brand_name')->get();  
-            return view('pages.checkout.handcash')->with('data_cate',$data_cate)->with('brand',$data_brand);
+         $data_brand = Brand::select('brand_id', 'brand_name')->get();  
+            return view('pages.checkout.handcash')->with('data_cate',$data_cate)->with('data_brand',$data_brand);
 
         }else{
-            echo 'Thẻ ghi nợ';
+            Cart::destroy();
+
+           
+             $data_cate = CateModel::select('category_id', 'category_name')->get();
+                $data_brand = Brand::select('brand_id', 'brand_name')->get();  
+            return view('pages.checkout.handcash')->with('data_cate',$data_cate)->with('data_brand',$data_brand);
 
         }
         
