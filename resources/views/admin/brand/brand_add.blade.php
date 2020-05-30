@@ -1,6 +1,6 @@
 @extends('admin.master')
-@section('controller', 'Brand')
-@section('action', 'Add')
+@section('controller', 'Thuong')
+@section('action', 'hieu')
 @section('content')
 <!-- /.col-lg-12 -->
 <div class="col-lg-7" style="padding-bottom:120px">
@@ -16,21 +16,21 @@
     <form action="{{URL::to('/save-brand')}}" method="POST">
         {{ csrf_field() }}
         <div class="form-group">
-            <label>Brand Name</label>
+            <label>Tên Thương Hiệu</label>
             <input class="form-control" name="txtBrandName" placeholder="Please Enter Brand Name" />
         </div>
         <div class="form-group">
-            <label>Brand Description</label>
+            <label>Mô tả thương hiệu</label>
             <textarea class="form-control" rows="3" name="txtDescription"></textarea>
         </div>
         <div class="form-group">
-            <label>Brand Status</label>
+            <label>Trạng thái</label>
             <select name="txtStatus" class="form-control">
                 <option value="0">Hiện</option>
                 <option value="1">Ẩn</option>
             </select>
         </div>
-        <button type="submit" name="save_brand" class="btn btn-success">Brand Add</button>
+        <button type="submit" name="save_brand" class="btn btn-success">Thêm</button>
         <form>
         </div>
 @endsection
