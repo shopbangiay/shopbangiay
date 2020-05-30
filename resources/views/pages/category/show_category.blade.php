@@ -8,16 +8,9 @@
             <div class="product-image-wrapper">
                 <div class="single-products">
                         <div class="productinfo text-center">
-<<<<<<< HEAD
-                            <a href="{{URL::to('/chi-tiet-san-pham')}}">
-                            <img src="{{URL::to('public/uploads/product/'.$item->product_image)}}" alt="" />
-=======
                             <img src="{{URL::to('public/uploads/product/'.$item->product_image)}}" alt="" height="200" width="200" />
->>>>>>> 7e56df48fb4250164d1da88b1dcf973efc444b6b
                             <h2>{{number_format($item->product_price).' '.'VNĐ'}}</h2>
                             <p>{{$item->product_name}}</p>
-                            </a>
-                            {{-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a> --}}
                         </div>
                 </div>
                 <div class="choose">
