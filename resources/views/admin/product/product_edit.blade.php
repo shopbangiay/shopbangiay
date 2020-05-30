@@ -22,21 +22,17 @@
             <input class="form-control" name="product_name" value="{{$pro->product_name}}" />
         </div>
         <div class="form-group">
-            <label>Mã Sản Phẩm</label>
-            <input class="form-control" name="product_id" value="{{$pro->product_id}}" />
-        </div>
-        <div class="form-group">
             <label>Giá</label>
             <input class="form-control" name="product_price" value="{{$pro->product_price}} "/>
         </div>
         <div class="form-group">
              <label for="exampleInputPassword1">Nội Dung Sản Phẩm</label>
-             <textarea style="resize: none" class="form-control" rows="5" id="exampleInputPassword1">{{$pro->product_content}}</textarea>
+             <textarea name="product_content" class="form-control" rows="5" id="exampleInputPassword1">{{$pro->product_content}}</textarea>
         </div>
         <div class="form-group">
             <label>Ảnh Sản Phẩm</label>
             <input type="file" name="product_image">
-            <img src="public/uploads/product/{{$pro->product_image}}" height="100" width="100">
+            <img src="{{URL::to('public/uploads/product/'.$pro->product_image)}}" height="100" width="100">
             
         </div>
         <div class="form-group">
