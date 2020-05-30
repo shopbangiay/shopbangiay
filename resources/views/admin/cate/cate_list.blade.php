@@ -32,18 +32,16 @@
                     }    
                     ?>
                 </td>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('/delete-category/'.$item->category_id)}}" onclick="return confirm('are you sure?')"> Delete</a></td>
                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('/edit-category/'.$item->category_id)}}">Edit</a></td>
-=======
+
                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('admin/cate/delete-category/'.$item->category_id)}}"> Delete</a></td>
                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('admin/cate/edit-category/'.$item->category_id)}}">Edit</a></td>
->>>>>>> a26ad71bae76e6b36ac26d3cdcbb4c5295e065be
-=======
+
                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('admin/cate/delete-category/'.$item->category_id)}}"> Delete</a></td>
                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('admin/cate/edit-category/'.$item->category_id)}}">Edit</a></td>
->>>>>>> origin/brand
+
             </tr>
             @endforeach
         </tbody>
