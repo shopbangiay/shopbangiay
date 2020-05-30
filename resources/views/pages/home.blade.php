@@ -8,9 +8,14 @@
         <div class="product-image-wrapper">
             <div class="single-products">
                     <div class="productinfo text-center">
+<<<<<<< HEAD
                         <img src="{{URL::to('public/uploads/product/'.$product->product_image)}}" alt="" height="200" width="200" />
                         <h2>{{number_format($product->product_price).' '.'VNĐ'}}</h2>
                         <p>{{$product->product_name}}</p>
+=======
+                        <img src="{{URL::to('public/uploads/product/'.$product->product_image)}}" alt="" height="250" width="50"/>
+                        <h2></h2>
+>>>>>>> master
                         
                         {{-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a> --}}
                     </div>

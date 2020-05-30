@@ -32,7 +32,11 @@
         <div class="form-group">
             <label>Ảnh Sản Phẩm</label>
             <input type="file" name="product_image">
+<<<<<<< HEAD
             <img src="{{URL::to('public/uploads/product/'.$pro->product_image)}}" height="200" width="200">
+=======
+            <img src="{{URL::to('public/uploads/product/'.$pro->product_image)}}" height="100" width="100">
+>>>>>>> master
             
         </div>
         <div class="form-group">

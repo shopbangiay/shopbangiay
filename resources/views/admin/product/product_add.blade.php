@@ -54,8 +54,8 @@
         <div class="form-group">
             <label>Trạng thái sản phẩm</label>
             <select name="product_status" class="form-control">
-                <option value="0">Hiện</option>
-                <option value="1">Ẩn</option>
+                <option value="0">Ẩn</option>
+                <option value="1">Hiện</option>
             </select>
         </div>
         <button type="submit" name="add_product" class="btn btn-default">Thêm Sản Phẩm</button>
