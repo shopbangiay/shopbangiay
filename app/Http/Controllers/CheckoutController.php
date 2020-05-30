@@ -54,10 +54,10 @@ class CheckoutController extends Controller
     }
      public function payment(Request $request){
         
-     		  $data_cate = CateModel::select('category_id', 'category_name')->get();
-                $data_brand = Brand::select('brand_id', 'brand_name')->get(); 
+     		$data_cate = CateModel::select('category_id', 'category_name')->get();
+            $data_brand = Brand::select('brand_id', 'brand_name')->get(); 
 
-     	 return view('pages.checkout.payment')->with('category',$data_cate)->with('brand',$data_brand);
+     	 return view('pages.checkout.payment')->with('data_cate',$data_cate)->with('data_brand',$data_brand);
        
 
     }
@@ -124,14 +124,14 @@ class CheckoutController extends Controller
            
      		 $data_cate = CateModel::select('category_id', 'category_name')->get();
         $data_brand = Brand::select('brand_id', 'brand_name')->get();  
-            return view('pages.checkout.handcash')->with('category',$data_cate)->with('brand',$data_brand);
+            return view('pages.checkout.handcash')->with('data_cate',$data_cate)->with('brand',$data_brand);
 
         }else{
             echo 'Thẻ ghi nợ';
 
         }
         
-        //return Redirect::to('/payment');
+        return Redirect::to('/payment');
     }
     	
 }
