@@ -32,8 +32,8 @@
                     }    
                     ?>
                 </td>
-                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('/delete-category/'.$item->category_id)}}" onclick="return confirm('are you sure?')"> Delete</a></td>
-                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('/edit-category/'.$item->category_id)}}">Edit</a></td>
+                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('admin/cate/delete-category/'.$item->category_id)}}"> Delete</a></td>
+                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('admin/cate/edit-category/'.$item->category_id)}}">Edit</a></td>
             </tr>
             @endforeach
         </tbody>

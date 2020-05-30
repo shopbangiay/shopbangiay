@@ -123,4 +123,5 @@ class ProductController extends Controller
         $del_product->delete();
         return Redirect::to('all-product')->with(['flash_level' => 'success', 'flash_message' => 'Xóa danh mục thành công']);
     }
+   
 }

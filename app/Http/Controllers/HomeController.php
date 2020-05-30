@@ -8,7 +8,6 @@ use App\Brand;
 use App\Product;
 use DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 

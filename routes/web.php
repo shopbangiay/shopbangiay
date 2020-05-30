@@ -17,24 +17,47 @@ Route::get('/danh-muc-san-pham/{id}', 'HomeController@show_category');
 // Route::get('/danh-muc-san-pham/{brand_id}', 'BrandProduct@show_brand');
 Route::get('/dashboard', 'HomeController@show_dashboard');
 <<<<<<< HEAD
+<<<<<<< HEAD
 Route::get('/Thuong-Hieu/{brand_id}', 'HomeController@show_brand');
 =======
 Route::get('/chi-tiet-san-pham/{id}','HomeController@show_detail');
 Route::get('Trang-chu','HomeController@index');
 Route::post('/tim-kiem','HomeController@search');
 >>>>>>> origin/login
+=======
+
+Route::get('/Thuong-Hieu/{brand_id}', 'HomeController@show_brand');
+
+Route::get('/chi-tiet-san-pham/{id}','HomeController@show_detail');
+Route::get('Trang-chu','HomeController@index');
+Route::post('/tim-kiem','HomeController@search');
+>>>>>>> 6696e07bfe24775c7c1ef220c732d412865bcd2c
 
 
 //-------------------------------DANH MỤC SẢN PHẨM------------------------- */
-Route::get('/add-category', 'CateController@add_category');
-Route::get('/all-category', 'CateController@all_category');
-Route::get('/edit-category/{id_cate}', 'CateController@edit_category');
-Route::get('/delete-category/{id_cate}', 'CateController@delete_category');
-Route::get('/unactive-category/{id_cate}', 'CateController@unactive_category');
-Route::get('/active-category/{id_cate}', 'CateController@active_category');
+// Route::get('/add-category', 'CateController@add_category');
+// Route::get('/all-category', 'CateController@all_category');
+// Route::get('/edit-category/{id_cate}', 'CateController@edit_category');
+// Route::get('/delete-category/{id_cate}', 'CateController@delete_category');
+// Route::get('/unactive-category/{id_cate}', 'CateController@unactive_category');
+// Route::get('/active-category/{id_cate}', 'CateController@active_category');
 
-Route::post('/save-category', 'CateController@save_category');
-Route::post('/update-category/{id_cate}', 'CateController@update_category');
+// Route::post('/save-category', 'CateController@save_category');
+// Route::post('/update-category/{id_cate}', 'CateController@update_category');
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::group(['prefix' => 'cate'], function () {
+        Route::get('/add-category', 'CateController@add_category');
+        Route::get('/all-category', 'CateController@all_category');
+        Route::get('/edit-category/{id_cate}', 'CateController@edit_category');
+        Route::get('/delete-category/{id_cate}', 'CateController@delete_category');
+        Route::get('/unactive-category/{id_cate}', 'CateController@unactive_category');
+        Route::get('/active-category/{id_cate}', 'CateController@active_category');
+
+        Route::post('/save-category', 'CateController@save_category');
+        Route::post('/update-category/{id_cate}', 'CateController@update_category');
+    });
+});
 // -------------------------------------------------------------------------
 
 //-------------------------------THƯƠNG HIỆU SẢN PHẨM----------------------- */
