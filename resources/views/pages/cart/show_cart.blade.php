@@ -40,9 +40,9 @@
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
-									<form action="{{URL::to('/update-cart-quantity')}}" method="POST">
+									<form action="{{URL::to('/update-cart-qty')}}" method="POST">
 									{{ csrf_field() }}
-									<input class="cart_quantity_input" type="text" name="cart_quantity" value="{{$v_content->qty}}"  >
+									<input class="cart_quantity_input" type="text" name="quantity_cart" value="{{$v_content->qty}}"  >
 									<input type="hidden" value="{{$v_content->rowId}}" name="rowId_cart" class="form-control">
 									<input type="submit" value="Cập nhật" name="update_qty" class="btn btn-default btn-sm">
 									</form>
@@ -58,7 +58,7 @@
 								</p>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href="{{URL::to('/delete-to-cart/'.$v_content->rowId)}}"><i class="fa fa-times"></i></a>
+								<a class="cart_quantity_delete" href="{{URL::to('/delete-cart/'.$v_content->rowId)}}"><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
 						@endforeach
