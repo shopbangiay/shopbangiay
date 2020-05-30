@@ -1,10 +1,6 @@
 @extends('layout')
 @section('content')
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 7db3e69ca3c9833a6199fc2945725872621c2846
 	<section id="cart_items">
 		<div class="container">
 			<div class="breadcrumbs">
@@ -110,7 +106,7 @@
 	</section><!--/#do_action-->
 
 
-=======
+
 <section id="cart_items">
     <div class="container">
         <div class="breadcrumbs">
@@ -246,15 +242,23 @@
                         <li>Phí vận chuyển <span>Free</span></li>
                         <li>Thành tiền <span>{{Cart::total().'vnđ'}}</span></li>
                     </ul>
-                        <a class="btn btn-default update" href="">Update</a>
-                        <a class="btn btn-default check_out" href="">Check Out</a>
+                       <?php
+                                   $customer_id = Session::get('customer_id');
+                                   if($customer_id!=NULL){ 
+                                 ?>
+                                  
+                                <a class="btn btn-default check_out" href="{{URL::to('/checkout')}}">Thanh toán</a>
+                                <?php
+                            }else{
+                                 ?>
+                                 
+                                 <a class="btn btn-default check_out" href="{{URL::to('/login-checkout')}}">Thanh toán</a>
+                                 <?php 
+                             }
+                                 ?>
                 </div>
             </div>
         </div>
     </div>
 </section><!--/#do_action-->
-<<<<<<< HEAD
->>>>>>> dbf0e61882598c36832d3f2dbdead3dfab849636
-=======
->>>>>>> 7db3e69ca3c9833a6199fc2945725872621c2846
 @endsection

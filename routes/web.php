@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/','HomeController@index');
 Route::get('/danh-muc-san-pham/{id}', 'HomeController@show_category');
-// Route::get('/danh-muc-san-pham/{brand_id}', 'BrandProduct@show_brand');
+Route::get('/danh-muc-san-pham/{brand_id}', 'BrandProduct@show_brand');
 Route::get('/dashboard', 'HomeController@show_dashboard');
 
 Route::get('/Thuong-Hieu/{brand_id}', 'HomeController@show_brand');
@@ -26,15 +26,15 @@ Route::post('/tim-kiem','HomeController@search');
 
 
 //-------------------------------DANH MỤC SẢN PHẨM------------------------- */
-// Route::get('/add-category', 'CateController@add_category');
-// Route::get('/all-category', 'CateController@all_category');
-// Route::get('/edit-category/{id_cate}', 'CateController@edit_category');
-// Route::get('/delete-category/{id_cate}', 'CateController@delete_category');
-// Route::get('/unactive-category/{id_cate}', 'CateController@unactive_category');
-// Route::get('/active-category/{id_cate}', 'CateController@active_category');
+ Route::get('/add-category', 'CateController@add_category');
+Route::get('/all-category', 'CateController@all_category');
+ Route::get('/edit-category/{id_cate}', 'CateController@edit_category');
+Route::get('/delete-category/{id_cate}', 'CateController@delete_category');
+Route::get('/unactive-category/{id_cate}', 'CateController@unactive_category');
+ Route::get('/active-category/{id_cate}', 'CateController@active_category');
 
-// Route::post('/save-category', 'CateController@save_category');
-// Route::post('/update-category/{id_cate}', 'CateController@update_category');
+ Route::post('/save-category', 'CateController@save_category');
+Route::post('/update-category/{id_cate}', 'CateController@update_category');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'cate'], function () {
