@@ -33,9 +33,6 @@ class HomeController extends Controller
         $cate_id = Product::join('category_product as cate', 'product.category_id', 'cate.category_id')
                             ->join('brand_product as brand', 'brand.brand_id', 'product.brand_id')
                             ->where('cate.category_id', $id)
-<<<<<<< HEAD
-                            ->select('product.product_name', 'product.product_price','product_image')
-=======
                             ->select('cate.category_id' ,'product.product_id' ,'product.product_name', 'product.product_image','product.product_price', 'product.product_desc', 'product.product_content', 'cate.category_name', 'brand.brand_name')
                             ->get();
         return view('pages.category.show_category')
@@ -52,7 +49,6 @@ class HomeController extends Controller
         $brand_by_id = Product::join('brand_product as brand', 'product.brand_id', 'brand.brand_id')
                             ->where('brand.brand_id', $brand_id)
                             ->select('product.product_name', 'product.product_price')
->>>>>>> 25ca6ab60b906c3072afd1947f7314add5a6f4f8
                             ->get();
 
 
