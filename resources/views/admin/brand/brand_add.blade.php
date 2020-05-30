@@ -13,7 +13,7 @@
         </ul>
     </div>
     @endif
-    <form action="{{URL::to('/save-brand')}}" method="POST">
+    <form action="{{URL::to('admin/brand/save-brand')}}" method="POST">
         {{ csrf_field() }}
         <div class="form-group">
             <label>Tên Thương Hiệu</label>

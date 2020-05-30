@@ -13,7 +13,7 @@
         </ul>
     </div>
     @endif
-    <form action="{{URL::to('/save-product')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{URL::to('admin/product/save-product')}}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group">
             <label>Tên Sản Phẩm</label>
