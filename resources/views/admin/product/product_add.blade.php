@@ -20,10 +20,6 @@
             <input class="form-control" name="product_name" placeholder="Vui lòng nhập tên sản phẩm" />
         </div>
         <div class="form-group">
-            <label>Mã Sản Phẩm</label>
-            <input class="form-control" name="product_id" placeholder="Vui lòng nhập mã" />
-        </div>
-        <div class="form-group">
             <label>Giá</label>
             <input class="form-control" name="product_price" placeholder="Vui lòng nhập giá" />
         </div>
