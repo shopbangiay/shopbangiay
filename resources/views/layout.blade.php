@@ -255,6 +255,7 @@
 						<div class="brands_products"><!--brands_products-->
 							<h2>Thương hiệu</h2>
 							<div class="brands-name">
+
 								<ul class="nav nav-pills nav-stacked">
 
 									@foreach ($data_brand as $item)
