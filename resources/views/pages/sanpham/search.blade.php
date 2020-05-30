@@ -5,13 +5,13 @@
                        @foreach($search_product as $key => $product)
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
-                             <a href="{{URL::to('/chi-tiet-san-pham/'.$product->product_slug)}}">
+                             <a href="{{URL::to('/all-product')}}">
+                                {{ csrf_field() }}  
                                 <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="{{URL::to('public/uploads/product/'.$product->product_image)}}" alt="" />
+                                            <img src="{{URL::to('public/uploads/product/'.$product->product_image)}}" alt="" height="200" width="200" />
                                             <h2>{{number_format($product->product_price).' '.'VNĐ'}}</h2>
                                             <p>{{$product->product_name}}</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
                                         </div>
                                       
                                 </div>

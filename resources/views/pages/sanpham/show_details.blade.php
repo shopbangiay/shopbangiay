@@ -137,7 +137,7 @@
 					<div class="product-image-wrapper">
 						<div class="single-products">
 							<div class="productinfo text-center">
-								<img src="{{URL::to('public/uploads/product/'.$item->product_image)}}" alt="" />
+								<img src="{{URL::to('public/uploads/product/'.$item->product_image)}}" alt="" height="200" width="200" />
 								<h2>{{number_format($item->product_price).'vnđ'}}</h2>
 								<p>{{$item->product_name}}</p>
 								<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>

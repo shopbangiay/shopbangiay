@@ -108,10 +108,10 @@
                             <a href="#"><i class="fa fa-cube fa-fw"></i> Brand<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{URL::to('/all-brand')}}">List Brand</a>
+                                    <a href="{{URL::to('admin/brand/all-brand')}}">List Brand</a>
                                 </li>
                                 <li>
-                                    <a href="{{URL::to('/add-brand')}}">Add Brand</a>
+                                    <a href="{{URL::to('admin/brand/add-brand')}}">Add Brand</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -120,10 +120,10 @@
                             <a href="#"><i class="fa fa-cube fa-fw"></i> Sản Phẩm<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{URL::to('all-product')}}">Danh sách sản phẩm</a>
+                                    <a href="{{URL::to('admin/product/all-product')}}">Danh sách sản phẩm</a>
                                 </li>
                                 <li>
-                                    <a href="{{URL::to('add-product')}}">Thêm sản phẩm</a>
+                                    <a href="{{URL::to('admin/product/add-product')}}">Thêm sản phẩm</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

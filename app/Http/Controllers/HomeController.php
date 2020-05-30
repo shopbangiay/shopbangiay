@@ -6,7 +6,7 @@ use App\Http\Requests;
 use App\CateModel;
 use App\Brand;
 use App\Product;
-use DB;
+// use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
@@ -33,6 +33,7 @@ class HomeController extends Controller
                             ->join('brand_product as brand', 'brand.brand_id', 'product.brand_id')
                             ->where('cate.category_id', $id)
                             ->select('cate.category_id' ,'product.product_id' ,'product.product_name', 'product.product_image','product.product_price', 'product.product_desc', 'product.product_content', 'cate.category_name', 'brand.brand_name')
+
                             ->get();
         return view('pages.category.show_category')
                 ->with('data_cate', $data_cate)
@@ -90,7 +91,7 @@ class HomeController extends Controller
              $data_cate = CateModel::select('category_id', 'category_name')->get();
              $data_brand = Brand::select('brand_id', 'brand_name')->get();
               $search_product = DB::table('product')->where('product_name','like','%'.$keywords.'%')->get();
-        return view('pages.sanpham.search')->with('category',$data_cate)->with('brand',$data_brand)->with('search_product',$search_product);
+        return view('pages.sanpham.search')->with('data_cate',$data_cate)->with('data_brand',$data_brand)->with('search_product',$search_product);
 
     }
 }
