@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('controller', 'Brand')
+@section('controller', 'Thương Hiệu')
 @section('action', 'Edit')
 @section('content')
 <!-- /.col-lg-12 -->
