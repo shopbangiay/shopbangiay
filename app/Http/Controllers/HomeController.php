@@ -15,13 +15,13 @@ use Illuminate\Support\Facades\Redirect;
 class HomeController extends Controller
 {
     public function index(){
-        $data_cate = CateModel::select('category_id', 'category_name')->get();
+        $data_cate = CateModel::select('category_id', 'category_name')->where('category_status', '1')->get();
         $data_brand = Brand::select('brand_id', 'brand_name')->get();
         $all_product = DB::table('product')
          ->join('category_product','category_product.category_id','=','product.category_id')
         ->join('brand_product','brand_product.brand_id','=','product.brand_id')
         ->orderby('product.product_id','desc')->get();
-        $all_product = DB::table('product')->where('product_status','1')->orderby('product_id','desc')->limit(3)->get();
+        $all_product = DB::table('product')->where('product_status','1')->orderby('product_id','desc')->limit(12)->get();
         return view('pages.home')->with('data_cate', $data_cate)->with('data_brand', $data_brand)->with('all_product',$all_product);
     }
     public function show_category($id){
@@ -79,6 +79,7 @@ class HomeController extends Controller
                         ->join('brand_product as brand', 'brand.brand_id', '=', 'sp.brand_id')
                         ->where('cate.category_id', $get_cate_id)
                         ->whereNotIn('sp.product_id', [$id])
+                        ->limit(3)
                         ->get();
         
         return view('pages.sanpham.show_details')
