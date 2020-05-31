@@ -34,7 +34,7 @@ Route::post('/tim-kiem','HomeController@search');
 
 
 //-------------------------------DANH MỤC SẢN PHẨM------------------------- */
-<<<<<<< HEAD
+
 Route::get('/add-category', 'CateController@add_category');
  Route::get('/all-category', 'CateController@all_category');
  Route::get('/edit-category/{id_cate}', 'CateController@edit_category');
@@ -44,7 +44,7 @@ Route::get('/add-category', 'CateController@add_category');
 
  Route::post('/save-category', 'CateController@save_category');
  Route::post('/update-category/{id_cate}', 'CateController@update_category');
-=======
+
  Route::get('/add-category', 'CateController@add_category');
 Route::get('/all-category', 'CateController@all_category');
  Route::get('/edit-category/{id_cate}', 'CateController@edit_category');
@@ -54,7 +54,6 @@ Route::get('/unactive-category/{id_cate}', 'CateController@unactive_category');
 
  Route::post('/save-category', 'CateController@save_category');
 Route::post('/update-category/{id_cate}', 'CateController@update_category');
->>>>>>> origin/master
 
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'cate'], function () {
