@@ -14,19 +14,6 @@ use Illuminate\Support\Facades\Redirect;
 
 class HomeController extends Controller
 {
-<<<<<<< HEAD
-=======
-    public function index(){
-        $data_cate = CateModel::select('category_id', 'category_name')->get();
-        $data_brand = Brand::select('brand_id', 'brand_name')->get();
-        $all_product = DB::table('product')
-         ->join('category_product','category_product.category_id','=','product.category_id')
-        ->join('brand_product','brand_product.brand_id','=','product.brand_id')
-        ->orderby('product.product_id','desc')->get();
-        $all_product = DB::table('product')->where('product_status','1')->orderby('product_id','desc')->limit(3)->get();
-        return view('pages.home')->with('data_cate', $data_cate)->with('data_brand', $data_brand)->with('all_product',$all_product);
-    }
->>>>>>> origin/login
     public function show_category($id){
         $data_cate = CateModel::select('category_id', 'category_name')->get();
         $data_brand = Brand::select('brand_id', 'brand_name')->get();
@@ -38,7 +25,6 @@ class HomeController extends Controller
                             ->where('cate.category_id', $id)
                             ->select('cate.category_id' ,'product.product_id' ,'product.product_name', 'product.product_image','product.product_price', 'product.product_desc', 'product.product_content', 'cate.category_name', 'brand.brand_name')
 
-<<<<<<< HEAD
                             ->get();
         return view('pages.category.show_category')
                 ->with('data_cate', $data_cate)
@@ -46,8 +32,6 @@ class HomeController extends Controller
                 ->with('cate', $cate)
                 ->with('cate_id', $cate_id)
 
-=======
->>>>>>> 7e56df48fb4250164d1da88b1dcf973efc444b6b
                             ->get();
         return view('pages.category.show_category')
                 ->with('data_cate', $data_cate)
@@ -68,11 +52,9 @@ class HomeController extends Controller
 
 
                 return view('pages.brand.show_brand')->with('data_cate', $data_cate)->with('data_brand', $data_brand)->with('brand', $brand)->with('brand_by_id', $brand_by_id);
-<<<<<<< HEAD
 
     }
-<<<<<<< HEAD
-=======
+
 
     public function index(){
         $data_cate = CateModel::select('category_id', 'category_name')->get();
@@ -83,10 +65,7 @@ class HomeController extends Controller
         // ->orderby('product.product_id','desc')->get();
         $all_product = DB::table('product')->where('product_status','1')->orderby('product_id','desc')->limit(5)->get();
         return view('pages.home')->with('data_cate', $data_cate)->with('data_brand', $data_brand)->with('all_product',$all_product);
-=======
->>>>>>> 7e56df48fb4250164d1da88b1dcf973efc444b6b
     }
->>>>>>> master
     
     public function show_dashboard(){
         return view('admin.master');
