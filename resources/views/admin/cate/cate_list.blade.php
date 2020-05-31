@@ -22,24 +22,17 @@
                     <?php
                     if($item->category_status == 1){
                     ?>
-                    <a href="{{URL::to('/unactive-category/'.$item->category_id)}}"><span class="fa-thumb-styling  fa fa-thumbs-up"></span></a>
+                    <a href="{{URL::to('admin/cate/unactive-category/'.$item->category_id)}}"><span class="fa-thumb-styling  fa fa-thumbs-up"></span></a>
                     <?php
                     }
                     else{
                     ?>
-                    <a href="{{URL::to('/active-category/'.$item->category_id)}}"><span class="fa-thumb-styling  fa fa-thumbs-down "></span></a>
+                    <a href="{{URL::to('admin/cate/active-category/'.$item->category_id)}}"><span class="fa-thumb-styling  fa fa-thumbs-down "></span></a>
                     <?php
                     }    
                     ?>
                 </td>
-
-                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('/delete-category/'.$item->category_id)}}" onclick="return confirm('are you sure?')"> Delete</a></td>
-                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('/edit-category/'.$item->category_id)}}">Edit</a></td>
-
-                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('admin/cate/delete-category/'.$item->category_id)}}"> Delete</a></td>
-                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('admin/cate/edit-category/'.$item->category_id)}}">Edit</a></td>
-
-                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('admin/cate/delete-category/'.$item->category_id)}}"> Delete</a></td>
+                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('admin/cate/delete-category/'.$item->category_id)}}" onclick="return confirm('are you sure?')"> Delete</a></td>
                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('admin/cate/edit-category/'.$item->category_id)}}">Edit</a></td>
 
             </tr>
