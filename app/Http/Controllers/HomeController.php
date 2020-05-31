@@ -6,9 +6,8 @@ use App\Http\Requests;
 use App\CateModel;
 use App\Brand;
 use App\Product;
-// use DB;
+use DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 
@@ -49,7 +48,7 @@ class HomeController extends Controller
     
         $brand_by_id = Product::join('brand_product as brand', 'product.brand_id', 'brand.brand_id')
                             ->where('brand.brand_id', $brand_id)
-                            ->select('product.product_name', 'product.product_price')
+                            ->select('product.product_id' ,'product.product_name', 'product.product_image','product.product_price', 'product.product_desc', 'product.product_content', 'brand.brand_name', 'brand.brand_id')
                             ->get();
 
 
