@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/','HomeController@index');
 Route::get('/danh-muc-san-pham/{id}', 'HomeController@show_category');
+Route::get('/danh-muc-san-pham/{brand_id}', 'BrandProduct@show_brand');
 Route::get('/dashboard', 'HomeController@show_dashboard');
+
+Route::get('/Thuong-Hieu/{brand_id}', 'HomeController@show_brand');
+
 Route::get('/chi-tiet-san-pham/{id}','HomeController@show_detail');
 Route::get('Trang-chu','HomeController@index');
 Route::post('/tim-kiem','HomeController@search');
@@ -37,33 +41,50 @@ Route::post('/update-user/{admin_id}', 'AdminController@update_user');
 // -------------------------------------------------------------------------
 
 
-//-------------------------------DANH MỤC SẢN PHẨM------------------------- */
-Route::get('/add-category', 'CateController@add_category');
-Route::get('/all-category', 'CateController@all_category');
-Route::get('/edit-category/{id_cate}', 'CateController@edit_category');
-Route::get('/delete-category/{id_cate}', 'CateController@delete_category');
-Route::get('/unactive-category/{id_cate}', 'CateController@unactive_category');
-Route::get('/active-category/{id_cate}', 'CateController@active_category');
+Route::get('/Thuong-Hieu/{brand_id}', 'HomeController@show_brand');
 
-Route::post('/save-category', 'CateController@save_category');
-Route::post('/update-category/{id_cate}', 'CateController@update_category');
-// -------------------------------------------------------------------------
+Route::get('/chi-tiet-san-pham/{id}','HomeController@show_detail');
 
-//-------------------------------THƯƠNG HIỆU SẢN PHẨM----------------------- */
+Route::get('Trang-chu','HomeController@index');
+Route::post('/tim-kiem','HomeController@search');
 
-// -------------------------------------------------------------------------
 
-//-------------------------------SẢN PHẨM----------------------------------- */
-Route::get('/add-product', 'ProductController@add_product');
-Route::get('/all-product', 'ProductController@all_product');
-Route::get('/edit-product/{id_product}', 'ProductController@edit_product');
-Route::get('/delete-product/{id_product}', 'ProductController@delete_product');
-Route::get('/unactive-product/{id_product}', 'ProductController@unactive_product');
-Route::get('/active-product/{id_product}', 'ProductController@active_product');
+Route::group(['prefix' => 'admin'], function () {
+    Route::group(['prefix' => 'cate'], function () {
+        Route::get('/add-category', 'CateController@add_category');
+        Route::get('/all-category', 'CateController@all_category');
+        Route::get('/edit-category/{id_cate}', 'CateController@edit_category');
+        Route::get('/delete-category/{id_cate}', 'CateController@delete_category');
+        Route::get('/unactive-category/{id_cate}', 'CateController@unactive_category');
+        Route::get('/active-category/{id_cate}', 'CateController@active_category');
 
-Route::post('/save-product', 'ProductController@save_product');
-Route::post('/update-product/{id_product}', 'ProductController@update_product');
-// -------------------------------------------------------------------------
+        Route::post('/save-category', 'CateController@save_category');
+        Route::post('/update-category/{id_cate}', 'CateController@update_category');
+    });
+    Route::group(['prefix' => 'brand'], function () {
+        Route::get('/add-brand', 'BrandController@add_brand');
+        Route::get('/all-brand', 'BrandController@all_brand');
+        Route::get('/edit-brand/{id_brand}', 'BrandController@edit_brand');
+        Route::get('/delete-brand/{id_brand}', 'BrandController@delete_brand');
+        Route::get('/unactive-brand/{id_brand}', 'BrandController@unactive_brand');
+        Route::get('/active-brand/{id_brand}', 'BrandController@active_brand');
+
+        Route::post('/save-brand', 'BrandController@save_brand');
+        Route::post('/update-brand/{id_brand}', 'BrandController@update_brand');
+    });
+    Route::group(['prefix' => 'product'], function () {
+        Route::get('/add-product', 'ProductController@add_product');
+        Route::get('/all-product', 'ProductController@all_product');
+        Route::get('/edit-product/{id_product}', 'ProductController@edit_product');
+        Route::get('/delete-product/{id_product}', 'ProductController@delete_product');
+        Route::get('/unactive-product/{id_product}', 'ProductController@unactive_product');
+        Route::get('/active-product/{id_product}', 'ProductController@active_product');
+
+        Route::post('/save-product', 'ProductController@save_product');
+        Route::post('/update-product/{id_product}', 'ProductController@update_product');
+    });
+});
+// ----------------------------------------------------------------------------
 
 //-------------------------------CART--------------------------------------- */
 Route::post('/save-cart', 'CartController@save_cart');

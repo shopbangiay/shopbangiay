@@ -4,14 +4,14 @@
 <div class="product-details"><!--product-details-->
 	<div class="col-sm-5">
 		<div class="view-product">
-			<img src="{{URL::to('public/uploads/product/'.$value_detail->product_image)}}" alt="" />
+			<img src="{{URL::to('public/uploads/product/'.$value_detail->product_image)}}" alt="" height="200" width="200"/>
 			<h3>ZOOM</h3>
 		</div>
 		<div id="similar-product" class="carousel slide" data-ride="carousel">
 			
 			  <!-- Wrapper for slides -->
 				<div class="carousel-inner">
-					<div class="item active">
+					{{-- <div class="item active">
 					  <a href=""><img src="{{URL::to('public/frontend/images/similar1.jpg')}}" alt=""></a>
 					  <a href=""><img src="{{URL::to('public/frontend/images/similar2.jpg')}}" alt=""></a>
 					  <a href=""><img src="{{URL::to('public/frontend/images/similar3.jpg')}}" alt=""></a>
@@ -25,7 +25,7 @@
 					  <a href=""><img src="{{URL::to('public/frontend/images/similar1.jpg')}}" alt=""></a>
 					  <a href=""><img src="{{URL::to('public/frontend/images/similar2.jpg')}}" alt=""></a>
 					  <a href=""><img src="{{URL::to('public/frontend/images/similar3.jpg')}}" alt=""></a>
-					</div>
+					</div> --}}
 					
 				</div>
 
@@ -137,7 +137,7 @@
 					<div class="product-image-wrapper">
 						<div class="single-products">
 							<div class="productinfo text-center">
-								<img src="{{URL::to('public/uploads/product/'.$item->product_image)}}" alt="" />
+								<img src="{{URL::to('public/uploads/product/'.$item->product_image)}}" alt="" height="200" width="200" />
 								<h2>{{number_format($item->product_price).'vnđ'}}</h2>
 								<p>{{$item->product_name}}</p>
 								<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>

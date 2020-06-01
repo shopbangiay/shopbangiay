@@ -13,15 +13,11 @@
         </ul>
     </div>
     @endif
-    <form action="{{URL::to('/save-product')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{URL::to('admin/product/save-product')}}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group">
             <label>Tên Sản Phẩm</label>
             <input class="form-control" name="product_name" placeholder="Vui lòng nhập tên sản phẩm" />
-        </div>
-        <div class="form-group">
-            <label>Mã Sản Phẩm</label>
-            <input class="form-control" name="product_id" placeholder="Vui lòng nhập mã" />
         </div>
         <div class="form-group">
             <label>Giá</label>

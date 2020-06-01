@@ -1,0 +1,36 @@
+@extends('admin.master')
+@section('controller', 'Thương Hiệu')
+@section('action', 'Edit')
+@section('content')
+<!-- /.col-lg-12 -->
+<div class="col-lg-7" style="padding-bottom:120px">
+    @if(count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    <form action="{{URL::to('admin/brand/update-brand/'.$edit_brand->brand_id)}}" method="POST">
+        {{ csrf_field() }}
+        <div class="form-group">
+            <label>Brand Name</label>
+            <input class="form-control" name="txtBrandName" value="{{$edit_brand->brand_name}}" placeholder="Please Enter Category Name" />
+        </div>
+        <div class="form-group">
+            <label>Brand Description</label>
+            <textarea class="form-control" rows="3" name="txtDescription">{{$edit_brand->brand_desc}}</textarea>
+        </div>
+        <!-- <div class="form-group">
+            <label>Brand Status</label>
+            <select name="txtStatus" class="form-control">
+                <option value="{{$edit_brand->brand_status}}">Hiện</option>
+                <option value="{{$edit_brand->brand_status}}">Ẩn</option>
+            </select>
+        </div> -->
+        <button type="submit" name="update_brand" class="btn btn-success">Brand Update</button>
+        <form>
+        </div>
+@endsection

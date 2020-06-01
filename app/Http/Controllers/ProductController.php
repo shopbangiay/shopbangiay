@@ -40,7 +40,6 @@ class ProductController extends Controller
 
         $data = array();
         $data['product_name'] = $request->product_name;
-        $data['product_id'] = $request->product_id;
         $data['product_price'] = $request->product_price;
         $data['product_content'] = $request->product_content;
         $data['product_desc'] = $request->product_desc;
@@ -57,21 +56,21 @@ class ProductController extends Controller
             $data['product_image'] = $new_image;
             DB::table('product')->insert($data);
             Session::put('message','Thêm sản phẩm thành công');
-            return Redirect::to('add-product');
+            return Redirect::to('admin/product/add-product');
         }
         $data['product_image']='';
         DB::table('product')->insert($data);
         Session::put('message','Thêm sản phẩm thành công');
-        return Redirect::to('add-product');
+        return Redirect::to('admin/product/add-product');
         // return redirect()->route('admin.cate.list')->with(['flash_level' => 'success','flash_message' => 'Thêm thành công']);
     }
     public function unactive_product($product_id){
         $unactive = Product::where('product_id', $product_id)->update(['product_status' => 0]);
-        return Redirect::to('all-product')->with(['flash_level' => 'success', 'flash_message' => 'Cập nhật trạng thái Ẩn thành công']);
+        return Redirect::to('admin/product/all-product')->with(['flash_level' => 'success', 'flash_message' => 'Cập nhật trạng thái Ẩn thành công']);
     }
     public function active_product($product_id){
         $active = Product::where('product_id', $product_id)->update(['product_status' => 1]);
-        return Redirect::to('all-product')->with(['flash_level' => 'success', 'flash_message' => 'Cập nhật trạng thái Ẩn thành công']);
+        return Redirect::to('admin/product/all-product')->with(['flash_level' => 'success', 'flash_message' => 'Cập nhật trạng thái Ẩn thành công']);
     }
 
 
@@ -110,17 +109,18 @@ class ProductController extends Controller
                     $data['product_image'] = $new_image;
                     DB::table('product')->where('product_id',$product_id)->update($data);
                     Session::put('message','Cập nhật sản phẩm thành công');
-                    return Redirect::to('all-product');
+                    return Redirect::to('admin/product/all-product');
         }
             
         DB::table('product')->where('product_id',$product_id)->update($data);
         Session::put('message','Cập nhật sản phẩm thành công');
-        return Redirect::to('all-product');
+        return Redirect::to('admin/product/all-product');
     }
 
     public function delete_product($product_id){
         $del_product = Product::find($product_id);
         $del_product->delete();
-        return Redirect::to('all-product')->with(['flash_level' => 'success', 'flash_message' => 'Xóa danh mục thành công']);
+        return Redirect::to('admin/product/all-product')->with(['flash_level' => 'success', 'flash_message' => 'Xóa danh mục thành công']);
     }
+   
 }

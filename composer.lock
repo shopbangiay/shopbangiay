@@ -212,16 +212,47 @@
         },
         {
             "name": "doctrine/inflector",
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "version": "2.0.1",
+=======
             "version": "2.0.2",
+>>>>>>> 6696e07bfe24775c7c1ef220c732d412865bcd2c
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "3fc171224a316569faad2df6b18a1fd8cce5a56d"
+                "reference": "18b995743e7ec8b15fd6efc594f0fa3de4bfe6d7"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/18b995743e7ec8b15fd6efc594f0fa3de4bfe6d7",
+                "reference": "18b995743e7ec8b15fd6efc594f0fa3de4bfe6d7",
+=======
+            "version": "2.0.2",
+=======
+            "version": "2.0.3",
+>>>>>>> origin/master
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/inflector.git",
+                "reference": "9cf661f4eb38f7c881cac67c75ea9b00bf97b210"
+            },
+            "dist": {
+                "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/doctrine/inflector/zipball/3fc171224a316569faad2df6b18a1fd8cce5a56d",
                 "reference": "3fc171224a316569faad2df6b18a1fd8cce5a56d",
+>>>>>>> origin/login
+=======
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/3fc171224a316569faad2df6b18a1fd8cce5a56d",
+                "reference": "3fc171224a316569faad2df6b18a1fd8cce5a56d",
+>>>>>>> 6696e07bfe24775c7c1ef220c732d412865bcd2c
+=======
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/9cf661f4eb38f7c881cac67c75ea9b00bf97b210",
+                "reference": "9cf661f4eb38f7c881cac67c75ea9b00bf97b210",
+>>>>>>> origin/master
                 "shasum": ""
             },
             "require": {
@@ -299,7 +330,19 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "time": "2020-05-11T11:25:59+00:00"
+=======
             "time": "2020-05-25T20:08:47+00:00"
+>>>>>>> origin/login
+=======
+            "time": "2020-05-25T20:08:47+00:00"
+>>>>>>> 6696e07bfe24775c7c1ef220c732d412865bcd2c
+=======
+            "time": "2020-05-29T15:13:26+00:00"
+>>>>>>> origin/master
         },
         {
             "name": "doctrine/lexer",
@@ -808,6 +851,27 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "version": "v7.11.0",
+=======
+            "version": "v7.13.0",
+>>>>>>> 6696e07bfe24775c7c1ef220c732d412865bcd2c
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "f4563bd2e0875c59a1f7967abdbe5cef7f240117"
+            },
+            "dist": {
+                "type": "zip",
+<<<<<<< HEAD
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f4563bd2e0875c59a1f7967abdbe5cef7f240117",
+                "reference": "f4563bd2e0875c59a1f7967abdbe5cef7f240117",
+=======
+
+>>>>>>> origin/brand
             "version": "v7.13.0",
             "source": {
                 "type": "git",
@@ -818,6 +882,11 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/6fa69bfbd57744a5bbec5538ce483919b3fd625f",
                 "reference": "6fa69bfbd57744a5bbec5538ce483919b3fd625f",
+>>>>>>> origin/login
+=======
+                "url": "https://api.github.com/repos/laravel/framework/zipball/6fa69bfbd57744a5bbec5538ce483919b3fd625f",
+                "reference": "6fa69bfbd57744a5bbec5538ce483919b3fd625f",
+>>>>>>> 6696e07bfe24775c7c1ef220c732d412865bcd2c
                 "shasum": ""
             },
             "require": {
@@ -957,7 +1026,19 @@
                 "framework",
                 "laravel"
             ],
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "time": "2020-05-12T14:42:24+00:00"
+=======
+
+>>>>>>> origin/brand
             "time": "2020-05-26T14:32:43+00:00"
+>>>>>>> origin/login
+=======
+            "time": "2020-05-26T14:32:43+00:00"
+>>>>>>> 6696e07bfe24775c7c1ef220c732d412865bcd2c
         },
         {
             "name": "laravel/tinker",
@@ -1306,6 +1387,7 @@
         },
         {
             "name": "nesbot/carbon",
+<<<<<<< HEAD
             "version": "2.35.0",
             "source": {
                 "type": "git",
@@ -1316,6 +1398,49 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4b9bd835261ef23d36397a46a76b496a458305e5",
                 "reference": "4b9bd835261ef23d36397a46a76b496a458305e5",
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "version": "2.34.0",
+=======
+            "version": "2.34.2",
+>>>>>>> 6696e07bfe24775c7c1ef220c732d412865bcd2c
+            "source": {
+                "type": "git",
+                "url": "https://github.com/briannesbitt/Carbon.git",
+                "reference": "52ea68aebbad8a3b27b5d24e4c66ebe1933f8399"
+            },
+            "dist": {
+                "type": "zip",
+<<<<<<< HEAD
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/52ea68aebbad8a3b27b5d24e4c66ebe1933f8399",
+                "reference": "52ea68aebbad8a3b27b5d24e4c66ebe1933f8399",
+=======
+            "version": "2.34.2",
+=======
+            "version": "2.35.0",
+>>>>>>> 7e56df48fb4250164d1da88b1dcf973efc444b6b
+            "source": {
+                "type": "git",
+                "url": "https://github.com/briannesbitt/Carbon.git",
+                "reference": "4b9bd835261ef23d36397a46a76b496a458305e5"
+            },
+            "dist": {
+                "type": "zip",
+<<<<<<< HEAD
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/3e87404329b8072295ea11d548b47a1eefe5a162",
+                "reference": "3e87404329b8072295ea11d548b47a1eefe5a162",
+>>>>>>> origin/login
+=======
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/3e87404329b8072295ea11d548b47a1eefe5a162",
+                "reference": "3e87404329b8072295ea11d548b47a1eefe5a162",
+>>>>>>> 6696e07bfe24775c7c1ef220c732d412865bcd2c
+=======
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4b9bd835261ef23d36397a46a76b496a458305e5",
+                "reference": "4b9bd835261ef23d36397a46a76b496a458305e5",
+>>>>>>> 7e56df48fb4250164d1da88b1dcf973efc444b6b
+>>>>>>> origin/brand
                 "shasum": ""
             },
             "require": {
@@ -1385,7 +1510,23 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2020-05-24T18:27:52+00:00"
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            "time": "2020-05-12T19:53:34+00:00"
+=======
+            "time": "2020-05-19T22:14:16+00:00"
+>>>>>>> origin/login
+=======
+            "time": "2020-05-19T22:14:16+00:00"
+>>>>>>> 6696e07bfe24775c7c1ef220c732d412865bcd2c
+=======
+            "time": "2020-05-24T18:27:52+00:00"
+>>>>>>> 7e56df48fb4250164d1da88b1dcf973efc444b6b
+>>>>>>> origin/brand
         },
         {
             "name": "nikic/php-parser",
