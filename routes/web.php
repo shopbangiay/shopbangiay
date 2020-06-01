@@ -25,14 +25,6 @@ Route::get('Trang-chu','HomeController@index');
 Route::post('/tim-kiem','HomeController@search');
 
 
-Route::get('/Thuong-Hieu/{brand_id}', 'HomeController@show_brand');
-
-Route::get('/chi-tiet-san-pham/{id}','HomeController@show_detail');
-
-Route::get('Trang-chu','HomeController@index');
-Route::post('/tim-kiem','HomeController@search');
-
-
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'cate'], function () {
         Route::get('/add-category', 'CateController@add_category');

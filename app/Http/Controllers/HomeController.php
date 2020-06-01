@@ -9,6 +9,7 @@ use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -20,7 +21,8 @@ class HomeController extends Controller
          ->join('category_product','category_product.category_id','=','product.category_id')
         ->join('brand_product','brand_product.brand_id','=','product.brand_id')
         ->orderby('product.product_id','desc')->get();
-        $all_product = DB::table('product')->where('product_status','1')->orderby('product_id','desc')->limit(12)->get();
+        $all_product = DB::table('product')->where('product_status','1')->orderby('product_id','desc')->paginate(6);
+
         return view('pages.home')->with('data_cate', $data_cate)->with('data_brand', $data_brand)->with('all_product',$all_product);
     }
     public function show_category($id){
@@ -34,7 +36,7 @@ class HomeController extends Controller
                             ->where('cate.category_id', $id)
                             ->select('cate.category_id' ,'product.product_id' ,'product.product_name', 'product.product_image','product.product_price', 'product.product_desc', 'product.product_content', 'cate.category_name', 'brand.brand_name')
 
-                            ->get();
+                            ->paginate(6);
         return view('pages.category.show_category')
                 ->with('data_cate', $data_cate)
                 ->with('data_brand', $data_brand)
@@ -49,7 +51,7 @@ class HomeController extends Controller
         $brand_by_id = Product::join('brand_product as brand', 'product.brand_id', 'brand.brand_id')
                             ->where('brand.brand_id', $brand_id)
                             ->select('product.product_id' ,'product.product_name', 'product.product_image','product.product_price', 'product.product_desc', 'product.product_content', 'brand.brand_name', 'brand.brand_id')
-                            ->get();
+                            ->paginate(6);
 
 
 
@@ -95,6 +97,7 @@ class HomeController extends Controller
         return view('pages.sanpham.search')->with('data_cate',$data_cate)->with('data_brand',$data_brand)->with('search_product',$search_product);
 
     }
+}
     public function team_info(){
         return view('pages.team_info');
     }

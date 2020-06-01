@@ -23,7 +23,7 @@
                 <td>{{$stt}}</td>
                 <td>{{$item->product_name}}</td>
                 <td>{{$item->product_price}}</td>
-                <td><img src="public/uploads/product/{{$item->product_image}}" height="100" width="100"></td>
+                <td><img src="{{URL::to('public/uploads/product/'.$item->product_image)}}" height="100" width="100"></td>
                 <td>{{$item->category_name}}</td>
                 <td>{{$item->brand_name}}</td>
                 <td>
