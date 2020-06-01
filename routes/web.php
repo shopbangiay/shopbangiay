@@ -33,12 +33,7 @@ Route::get('/logout', 'AdminController@logout');
 
 
 //-------------------------------USER------------------------- */
-Route::get('/all-user', 'AdminController@all_user');
-Route::get('/add-user', 'AdminController@add_user');
-Route::get('/delete-user/{admin_id}','AdminController@delete_user');
-Route::get('/edit-user/{admin_id}','AdminController@edit_user');
-Route::post('/save-user', 'AdminController@save_user');
-Route::post('/update-user/{admin_id}', 'AdminController@update_user');
+
 // -------------------------------------------------------------------------
 
 
@@ -75,6 +70,14 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::post('/save-product', 'ProductController@save_product');
         Route::post('/update-product/{id_product}', 'ProductController@update_product');
+    });
+    Route::group(['prefix' => 'user'], function () {
+        Route::get('/all-user', 'AdminController@all_user');
+		Route::get('/add-user', 'AdminController@add_user');
+		Route::get('/delete-user/{admin_id}','AdminController@delete_user');
+		Route::get('/edit-user/{admin_id}','AdminController@edit_user');
+		Route::post('/save-user', 'AdminController@save_user');
+		Route::post('/update-user/{admin_id}', 'AdminController@update_user');
     });
 });
 // ----------------------------------------------------------------------------

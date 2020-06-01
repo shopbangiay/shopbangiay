@@ -23,8 +23,8 @@
                                 <td>{{$item->admin_name}}</td>
                                 <td>{{$item->admin_email}}</td>
                                 
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('/delete-user/'.$item->admin_id)}}" onclick="return confirm('Bạn muốn xóa member này?')"> Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('/edit-user/'.$item->admin_id)}}">Edit</a></td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('admin/user/delete-user/'.$item->admin_id)}}" onclick="return confirm('Bạn muốn xóa member này?')"> Delete</a></td>
+                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('admin/user/edit-user/'.$item->admin_id)}}">Edit</a></td>
                             </tr>
                             <!-- <tr class="even gradeC" align="center">
                                 <td>2</td>

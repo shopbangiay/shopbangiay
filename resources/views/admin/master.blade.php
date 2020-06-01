@@ -144,10 +144,10 @@
                             <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{URL::to('/all-user')}}">Danh sách</a>
+                                    <a href="{{URL::to('admin/user/all-user')}}">Danh sách</a>
                                 </li>
                                 <li>
-                                    <a href="{{URL::to('/add-user')}}">Thêm</a>
+                                    <a href="{{URL::to('admin/user/add-user')}}">Thêm</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
