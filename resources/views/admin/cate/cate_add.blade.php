@@ -13,7 +13,7 @@
         </ul>
     </div>
     @endif
-    <form action="{{URL::to('/save-category')}}" method="POST">
+    <form action="{{URL::to('admin/cate/save-category')}}" method="POST">
         {{ csrf_field() }}
         <div class="form-group">
             <label>Category Name</label>
