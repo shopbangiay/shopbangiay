@@ -22,6 +22,7 @@ class HomeController extends Controller
         ->join('brand_product','brand_product.brand_id','=','product.brand_id')
         ->orderby('product.product_id','desc')->get();
         $all_product = DB::table('product')->where('product_status','1')->orderby('product_id','desc')->paginate(6);
+
         return view('pages.home')->with('data_cate', $data_cate)->with('data_brand', $data_brand)->with('all_product',$all_product);
     }
     public function show_category($id){

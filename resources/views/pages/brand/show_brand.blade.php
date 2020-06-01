@@ -13,6 +13,7 @@
                         <h2>{{number_format($item->product_price).'vnđ'}}</h2>
                         <p>{{$item->product_name}}</p>
                     
+
                     <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm Giỏ Hàng </a> -->
                 </div>
             </div>
@@ -46,3 +47,4 @@
             </ul>
 </nav>
 @endsection
+

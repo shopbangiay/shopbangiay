@@ -20,21 +20,9 @@ Route::get('/dashboard', 'HomeController@show_dashboard');
 Route::get('/Thuong-Hieu/{brand_id}', 'HomeController@show_brand');
 
 Route::get('/chi-tiet-san-pham/{id}','HomeController@show_detail');
-
 Route::get('Trang-chu','HomeController@index');
 Route::post('/tim-kiem','HomeController@search');
 
-
-//-------------------------------DANH MỤC SẢN PHẨM------------------------- */
-//  Route::get('/add-category', 'CateController@add_category');
-// Route::get('/all-category', 'CateController@all_category');
-//  Route::get('/edit-category/{id_cate}', 'CateController@edit_category');
-// Route::get('/delete-category/{id_cate}', 'CateController@delete_category');
-// Route::get('/unactive-category/{id_cate}', 'CateController@unactive_category');
-//  Route::get('/active-category/{id_cate}', 'CateController@active_category');
-
-//  Route::post('/save-category', 'CateController@save_category');
-// Route::post('/update-category/{id_cate}', 'CateController@update_category');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'cate'], function () {
@@ -71,7 +59,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/update-product/{id_product}', 'ProductController@update_product');
     });
 });
-
+// ----------------------------------------------------------------------------
 
 //-------------------------------CART--------------------------------------- */
 Route::post('/save-cart', 'CartController@save_cart');

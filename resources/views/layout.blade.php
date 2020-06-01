@@ -264,8 +264,6 @@
 								</ul>
 							</div>
 						</div><!--/brands_products-->
-
-						
 				</div>
 			</div>
 				<div class="col-sm-9 padding-right">
