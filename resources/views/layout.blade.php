@@ -255,14 +255,8 @@
 						<div class="brands_products"><!--brands_products-->
 							<h2>Thương hiệu</h2>
 							<div class="brands-name">
-<<<<<<< HEAD
 								<ul class="nav nav-pills nav-stacked">	
 									<li><a href="#"></a></li>
-=======
-
-								<ul class="nav nav-pills nav-stacked">
-
->>>>>>> origin/login
 									@foreach ($data_brand as $item)
 									<li><a href="{{URL::to('/Thuong-Hieu/'. $item->brand_id)}}">{{$item->brand_name}}</a></li>
 									@endforeach
@@ -271,23 +265,7 @@
 							</div>
 						</div><!--/brands_products-->
 
-						<div class="products"><!--products-->
-							<h2>Sản Phẩm</h2>
-						<div class="panel-group category-products" id="accordian"><!--product-->
-							<div class="panel panel-default">
-								@foreach ($data_cate as $item)
-								<div class="panel-heading">
-									<h4 class="panel-title">
-									<a href="{{URL::to('/danh-muc-san-pham/'. $item->category_id)}}">{{$item->category_name}}</a>
-									<!-- <li><a href="{{URL::to('/add-product')}}">Thêm Sản Phẩm</a></li>
-									<li><a href="{{URL::to('/all-product')}}">Xem hết Sản Phẩm</a></li> -->
-									<li><a href=""></a></li>
-									</h4>
-								</div>
-								@endforeach
-							</div>
-						</div>
-					</div><!--products-->
+						
 				</div>
 			</div>
 				<div class="col-sm-9 padding-right">
@@ -463,6 +441,8 @@
 	<script src="{{asset('public/frontend/js/price-range.js')}}"></script>
     <script src="{{asset('public/frontend/js/jquery.prettyPhoto.js')}}"></script>
 	<script src="{{asset('public/frontend/js/main.js')}}"></script>
+	<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0"></script>
 	
 </body>
 </html>
