@@ -35,7 +35,7 @@ class HomeController extends Controller
                             ->where('cate.category_id', $id)
                             ->select('cate.category_id' ,'product.product_id' ,'product.product_name', 'product.product_image','product.product_price', 'product.product_desc', 'product.product_content', 'cate.category_name', 'brand.brand_name')
 
-<<<<<<< HEAD
+
                             ->get();
         return view('pages.category.show_category')
                 ->with('data_cate', $data_cate)
@@ -43,8 +43,7 @@ class HomeController extends Controller
                 ->with('cate', $cate)
                 ->with('cate_id', $cate_id)
 
-=======
->>>>>>> 7e56df48fb4250164d1da88b1dcf973efc444b6b
+
                             ->get();
         return view('pages.category.show_category')
                 ->with('data_cate', $data_cate)
@@ -65,10 +64,7 @@ class HomeController extends Controller
 
 
                 return view('pages.brand.show_brand')->with('data_cate', $data_cate)->with('data_brand', $data_brand)->with('brand', $brand)->with('brand_by_id', $brand_by_id);
-<<<<<<< HEAD
 
-=======
->>>>>>> 7e56df48fb4250164d1da88b1dcf973efc444b6b
     }
     
     public function show_dashboard(){
