@@ -97,7 +97,6 @@ class HomeController extends Controller
         return view('pages.sanpham.search')->with('data_cate',$data_cate)->with('data_brand',$data_brand)->with('search_product',$search_product);
 
     }
-}
     public function team_info(){
         return view('pages.team_info');
     }
