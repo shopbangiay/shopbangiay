@@ -6,10 +6,10 @@ use App\Http\Requests;
 use App\CateModel;
 use App\Brand;
 use App\Product;
-use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
