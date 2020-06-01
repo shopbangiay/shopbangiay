@@ -6,11 +6,11 @@ use App\Http\Requests;
 use App\CateModel;
 use App\Brand;
 use App\Product;
-use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -96,5 +96,9 @@ class HomeController extends Controller
               $search_product = DB::table('product')->where('product_name','like','%'.$keywords.'%')->get();
         return view('pages.sanpham.search')->with('data_cate',$data_cate)->with('data_brand',$data_brand)->with('search_product',$search_product);
 
+    }
+}
+    public function team_info(){
+        return view('pages.team_info');
     }
 }

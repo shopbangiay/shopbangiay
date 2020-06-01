@@ -119,7 +119,7 @@
                                  <?php 
                              }
                                  ?>
-
+								<li><a href="{{URL::to('/team-info')}}"><i class="fa fa-lock"></i>Thông tin nhóm 3</a></li>
 							</ul>
 						</div>
 					</div>
