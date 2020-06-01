@@ -119,7 +119,7 @@
                                  <?php 
                              }
                                  ?>
-
+								<li><a href="{{URL::to('/team-info')}}"><i class="fa fa-lock"></i>Thông tin nhóm 3</a></li>
 							</ul>
 						</div>
 					</div>
@@ -255,9 +255,8 @@
 						<div class="brands_products"><!--brands_products-->
 							<h2>Thương hiệu</h2>
 							<div class="brands-name">
-
-								<ul class="nav nav-pills nav-stacked">
-
+								<ul class="nav nav-pills nav-stacked">	
+									<li><a href="#"></a></li>
 									@foreach ($data_brand as $item)
 									<li><a href="{{URL::to('/Thuong-Hieu/'. $item->brand_id)}}">{{$item->brand_name}}</a></li>
 									@endforeach
@@ -440,6 +439,8 @@
 	<script src="{{asset('public/frontend/js/price-range.js')}}"></script>
     <script src="{{asset('public/frontend/js/jquery.prettyPhoto.js')}}"></script>
 	<script src="{{asset('public/frontend/js/main.js')}}"></script>
+	<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v7.0"></script>
 	
 </body>
 </html>

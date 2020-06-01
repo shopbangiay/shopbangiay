@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Requests\CateRequest;
 use App\CateModel;
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use DB;
@@ -71,6 +72,9 @@ class CateController extends Controller
     }
 
     public function delete_category($category_id){
+        $del_cate_pro = Product::join('category_product as cate', 'product.category_id', 'cate.category_id')
+                                    ->where('cate.category_id', $category_id)
+                                    ->delete();
         $del_cate = CateModel::find($category_id);
         $del_cate->delete();
         return Redirect::to('admin/cate/all-category')->with(['flash_level' => 'success', 'flash_message' => 'Xóa danh mục thành công']);

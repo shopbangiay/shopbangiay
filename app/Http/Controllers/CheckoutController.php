@@ -54,8 +54,10 @@ class CheckoutController extends Controller
     }
     public function payment(Request $request){
 
+
      		$data_cate = CateModel::select('category_id', 'category_name')->get();
         $data_brand = Brand::select('brand_id', 'brand_name')->get(); 
+
 
      	 return view('pages.checkout.payment')->with('data_cate',$data_cate)->with('data_brand',$data_brand);
        
@@ -128,8 +130,11 @@ class CheckoutController extends Controller
 
            
      		 $data_cate = CateModel::select('category_id', 'category_name')->get();
+
+
          $data_brand = Brand::select('brand_id', 'brand_name')->get();  
             return view('pages.checkout.handcash')->with('data_cate',$data_cate)->with('data_brand',$data_brand);
+
 
         }else{
             Cart::destroy();

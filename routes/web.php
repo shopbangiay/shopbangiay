@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/','HomeController@index');
+Route::get('/team-info','HomeController@team_info');
 Route::get('/danh-muc-san-pham/{id}', 'HomeController@show_category');
 Route::get('/danh-muc-san-pham/{brand_id}', 'BrandProduct@show_brand');
 Route::get('/dashboard', 'HomeController@show_dashboard');
@@ -39,14 +40,6 @@ Route::get('/edit-user/{admin_id}','AdminController@edit_user');
 Route::post('/save-user', 'AdminController@save_user');
 Route::post('/update-user/{admin_id}', 'AdminController@update_user');
 // -------------------------------------------------------------------------
-
-
-Route::get('/Thuong-Hieu/{brand_id}', 'HomeController@show_brand');
-
-Route::get('/chi-tiet-san-pham/{id}','HomeController@show_detail');
-
-Route::get('Trang-chu','HomeController@index');
-Route::post('/tim-kiem','HomeController@search');
 
 
 Route::group(['prefix' => 'admin'], function () {

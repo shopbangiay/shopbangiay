@@ -13,6 +13,7 @@
                         <h2>{{number_format($item->product_price).'vnđ'}}</h2>
                         <p>{{$item->product_name}}</p>
                     
+
                     <!-- <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm Giỏ Hàng </a> -->
                 </div>
             </div>
@@ -27,5 +28,23 @@
     </div>
     @endforeach
 </div><!--features_items-->
-
+<nav aria-label="Page navigation example">
+            <ul class="pagination">
+                @if($brand_by_id->currentPage() != 1)
+                <li><a href="{!!$brand_by_id->url($brand_by_id->currentPage()-1)!!}">Trước</a></li>
+                @endif
+                @for  ($i = 1; $i <= $brand_by_id->lastPage(); $i = $i + 1 )
+                <li class="{!! ($brand_by_id->currentPage() == $i) ? 'active' : '' !!}">
+                <a href="{!!$brand_by_id->url($i)!!}">{!! $i !!}</a></li>
+                <!-- @if($i>5)
+                <li class="unactive"><a href="#">...</a></li>
+                <li class="$brand_by_id->lastPage()"></li>
+                @endif  thêm khi trang sản phẩm nhiều hơn 5--> 
+                @endfor
+                @if($brand_by_id->currentPage() != $brand_by_id->lastPage())
+                <li><a href="{!!$brand_by_id->url($brand_by_id->currentPage()+1)!!}">Sau</a></li>
+                @endif
+            </ul>
+</nav>
 @endsection
+
