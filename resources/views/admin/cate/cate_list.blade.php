@@ -14,16 +14,9 @@
             </tr>
         </thead>
         <tbody>
-            @forreach($user as $u)
             <?php $stt = 0 ?>
             @foreach ($data_cate as $item)
             <?php $stt = $stt + 1 ?>
-            <tr class="odd gradeX" align="center">
-                <td>{{$u->id}}</td>
-                <td>{{$u->name}}</td>
-                <td>{{$u->email}}</td>
-                
-            </tr>
                 <td>{{$stt}}</td>
                 <td>{{$item->category_name}}</td>
                 <td>
@@ -46,7 +39,6 @@
 
 
             </tr>
-            @endforeach
             @endforeach
         </tbody>
     </table>
