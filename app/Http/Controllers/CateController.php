@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 
 class CateController extends Controller
 {
-    // public function getList(){
-    //     $data_cate = CateModel::select('category_id', 'category_name')->get();
-    //     return view('admin.cate.cate_list')->with('data_cate', $data_cate);
-    // }
+     //public function getList(){
+        //$data_cate = CateModel::select('category_id', 'category_name')->get();
+        //return view('admin.cate.cate_list')->with('data_cate', $data_cate);
+    //}
 
     public function add_category(){
         return view('admin.cate.cate_add');
@@ -81,11 +81,5 @@ class CateController extends Controller
     }
         
     // }
-    // public function postEdit(Request $request){
-    //     $this->validate($request,
-    //     [
-    //         'txtCateName' => 'required',
-    //         'txtCateName.required' => 'Vui lòng không để trống!!!'
-    //     ]);
-    // }
+    
 }
