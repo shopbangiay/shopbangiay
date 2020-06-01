@@ -6,16 +6,24 @@
             <tr align="center">
                 <th>ID</th>
                 <th>Name</th>
-                <th>Status</th>
+                <th>Email</th>
+                
+               <!-- <th>Status</th>-->
                 <th>Delete</th>
                 <th>Edit</th>
             </tr>
         </thead>
         <tbody>
+            @forreach($user as $u)
             <?php $stt = 0 ?>
             @foreach ($data_cate as $item)
             <?php $stt = $stt + 1 ?>
             <tr class="odd gradeX" align="center">
+                <td>{{$u->id}}</td>
+                <td>{{$u->name}}</td>
+                <td>{{$u->email}}</td>
+                
+            </tr>
                 <td>{{$stt}}</td>
                 <td>{{$item->category_name}}</td>
                 <td>
@@ -35,6 +43,7 @@
                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{{URL::to('/delete-category/'.$item->category_id)}}"> Delete</a></td>
                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{URL::to('/edit-category/'.$item->category_id)}}">Edit</a></td>
             </tr>
+            @endforeach
             @endforeach
         </tbody>
     </table>

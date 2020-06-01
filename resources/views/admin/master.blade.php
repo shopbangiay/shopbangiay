@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Khóa Học Lập Trình Laravel Framework 5.x Tại Khoa Phạm">
     <meta name="author" content="">
-    <title>Admin</title>
+    <title>Admin3</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('public/backend/bower_components/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -50,23 +50,35 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Admin Area</a>
+                <a class="navbar-brand" href="{{URL::to('/dashboard')}}">Admin </a>
             </div>
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
                 <!-- /.dropdown -->
                 <li class="dropdown">
+
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                         <span class="username">
+                            <?php
+                        $name=Session::get('admin_name');
+                        if($name){
+                            echo $name;
+                            
+                        }
+                        ?>
                     </a>
+
                     <ul class="dropdown-menu dropdown-user">
+                        
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="{{URL::to('/logout')}}"><i class="fa fa-sign-out fa-fw"></i> Đăng xuất</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -90,7 +102,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="{{URL::to('/dashboard')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Category<span class="fa arrow"></span></a>
@@ -132,10 +144,10 @@
                             <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">List User</a>
+                                    <a href="{{URL::to('/all-user')}}">Danh sách</a>
                                 </li>
                                 <li>
-                                    <a href="#">Add User</a>
+                                    <a href="{{URL::to('/add-user')}}">Thêm</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
