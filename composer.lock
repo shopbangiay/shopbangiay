@@ -852,6 +852,8 @@
         {
             "name": "laravel/framework",
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
             "version": "v7.11.0",
 =======
@@ -869,6 +871,7 @@
                 "reference": "f4563bd2e0875c59a1f7967abdbe5cef7f240117",
 =======
 
+>>>>>>> origin/brand
             "version": "v7.13.0",
             "source": {
                 "type": "git",
@@ -1024,10 +1027,13 @@
                 "laravel"
             ],
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2020-05-12T14:42:24+00:00"
 =======
 
+>>>>>>> origin/brand
             "time": "2020-05-26T14:32:43+00:00"
 >>>>>>> origin/login
 =======
@@ -1382,6 +1388,18 @@
         {
             "name": "nesbot/carbon",
 <<<<<<< HEAD
+            "version": "2.35.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/briannesbitt/Carbon.git",
+                "reference": "4b9bd835261ef23d36397a46a76b496a458305e5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4b9bd835261ef23d36397a46a76b496a458305e5",
+                "reference": "4b9bd835261ef23d36397a46a76b496a458305e5",
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "version": "2.34.0",
@@ -1422,6 +1440,7 @@
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4b9bd835261ef23d36397a46a76b496a458305e5",
                 "reference": "4b9bd835261ef23d36397a46a76b496a458305e5",
 >>>>>>> 7e56df48fb4250164d1da88b1dcf973efc444b6b
+>>>>>>> origin/brand
                 "shasum": ""
             },
             "require": {
@@ -1492,6 +1511,9 @@
                 }
             ],
 <<<<<<< HEAD
+            "time": "2020-05-24T18:27:52+00:00"
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2020-05-12T19:53:34+00:00"
@@ -1504,6 +1526,7 @@
 =======
             "time": "2020-05-24T18:27:52+00:00"
 >>>>>>> 7e56df48fb4250164d1da88b1dcf973efc444b6b
+>>>>>>> origin/brand
         },
         {
             "name": "nikic/php-parser",

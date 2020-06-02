@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Requests\CateRequest;
 use App\CateModel;
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use DB;
@@ -12,10 +13,10 @@ use Illuminate\Support\Facades\DB as FacadesDB;
 
 class CateController extends Controller
 {
-    // public function getList(){
-    //     $data_cate = CateModel::select('category_id', 'category_name')->get();
-    //     return view('admin.cate.cate_list')->with('data_cate', $data_cate);
-    // }
+     //public function getList(){
+        //$data_cate = CateModel::select('category_id', 'category_name')->get();
+        //return view('admin.cate.cate_list')->with('data_cate', $data_cate);
+    //}
 
     public function add_category(){
         return view('admin.cate.cate_add');
@@ -71,17 +72,14 @@ class CateController extends Controller
     }
 
     public function delete_category($category_id){
+        $del_cate_pro = Product::join('category_product as cate', 'product.category_id', 'cate.category_id')
+                                    ->where('cate.category_id', $category_id)
+                                    ->delete();
         $del_cate = CateModel::find($category_id);
         $del_cate->delete();
         return Redirect::to('admin/cate/all-category')->with(['flash_level' => 'success', 'flash_message' => 'Xóa danh mục thành công']);
     }
         
     // }
-    // public function postEdit(Request $request){
-    //     $this->validate($request,
-    //     [
-    //         'txtCateName' => 'required',
-    //         'txtCateName.required' => 'Vui lòng không để trống!!!'
-    //     ]);
-    // }
+    
 }
