@@ -97,7 +97,6 @@ class HomeController extends Controller
              $data_brand = Brand::select('brand_id', 'brand_name')->get();
               $search_product = DB::table('product')->where('product_name','like','%'.$keywords.'%')->get();
         return view('pages.sanpham.search')->with('data_cate',$data_cate)->with('data_brand',$data_brand)->with('search_product',$search_product);
-
     }
     public function team_info(){
         return view('pages.team_info');
