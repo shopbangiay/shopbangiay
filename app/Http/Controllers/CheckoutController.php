@@ -7,11 +7,15 @@ use DB;
 use Cart;
 use Session;
 use App\Product;
+use App\Shipping;
+use App\Order;
+use App\OrderDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB as FacadesDB;
 class CheckoutController extends Controller
 {
+    
 	public function login_checkout(Request $request){
 	 		 $data_cate = CateModel::select('category_id', 'category_name')->get();
         $data_brand = Brand::select('brand_id', 'brand_name')->get(); 
@@ -53,27 +57,24 @@ class CheckoutController extends Controller
     	return Redirect::to('/payment');
     }
     public function payment(Request $request){
-<<<<<<< HEAD
-        
-<<<<<<< HEAD
+
 
      		 $data_cate = CateModel::select('category_id', 'category_name')->get();
 
      		$data_cate = CateModel::select('category_id', 'category_name')->get();
 
-=======
-<<<<<<< HEAD
+
      		 $data_cate = CateModel::select('category_id', 'category_name')->get();
-=======
+
      		$data_cate = CateModel::select('category_id', 'category_name')->get();
->>>>>>> 7e56df48fb4250164d1da88b1dcf973efc444b6b
->>>>>>> origin/master
+
+
             $data_brand = Brand::select('brand_id', 'brand_name')->get(); 
-=======
+
 
      		$data_cate = CateModel::select('category_id', 'category_name')->get();
         $data_brand = Brand::select('brand_id', 'brand_name')->get(); 
->>>>>>> origin/login
+
 
      	 return view('pages.checkout.payment')->with('data_cate',$data_cate)->with('data_brand',$data_brand);
        
@@ -99,6 +100,27 @@ class CheckoutController extends Controller
    
     	
 
+    }
+   public function manage_order(){
+     
+       $all_order = DB::table('order')
+        ->join('customer','order.customer_id','=','customer.customer_id')
+        ->select('order.*','customer.customer_name')
+        ->orderby('order.order_id','desc')->get();
+        $manager_order  = view('admin.manager.manage_order')->with('all_order',$all_order);
+        return view('admin.master')->with('admin.manager.manage_order', $manager_order);
+    }
+    public function view_order($orderId){
+      
+        $order_by_id = DB::table('order')
+        ->join('customer','order.customer_id','=','customer.customer_id')
+        ->join('shipping','order.shipping_id','=','shipping.shipping_id')
+        ->join('order_details','order.order_id','=','order_details.order_id')
+        ->select('order.*','customer.*','shipping.*','order_details.*')->first();
+
+       $manager_order_by_id  = view('admin.view_order')->with('order_by_id',$order_by_id);
+        return view('admin_layout')->with('admin.view_order', $manager_order_by_id);
+        
     }
     public function order_place(Request $request){
         //insert payment_method
@@ -146,7 +168,7 @@ class CheckoutController extends Controller
 
            
      		 $data_cate = CateModel::select('category_id', 'category_name')->get();
-<<<<<<< HEAD
+
 
                 $data_brand = Brand::select('brand_id', 'brand_name')->get();  
             return view('pages.checkout.handcash')->with('data_cate',$data_cate)->with('data_brand',$data_brand);
@@ -154,20 +176,16 @@ class CheckoutController extends Controller
         $data_brand = Brand::select('brand_id', 'brand_name')->get();  
             return view('pages.checkout.handcash')->with('data_cate',$data_cate)->with('brand',$data_brand);
 
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                 $data_brand = Brand::select('brand_id', 'brand_name')->get();  
             return view('pages.checkout.handcash')->with('data_cate',$data_cate)->with('data_brand',$data_brand);
-=======
+
         $data_brand = Brand::select('brand_id', 'brand_name')->get();  
             return view('pages.checkout.handcash')->with('data_cate',$data_cate)->with('brand',$data_brand);
->>>>>>> 7e56df48fb4250164d1da88b1dcf973efc444b6b
-=======
+
          $data_brand = Brand::select('brand_id', 'brand_name')->get();  
             return view('pages.checkout.handcash')->with('data_cate',$data_cate)->with('data_brand',$data_brand);
->>>>>>> origin/login
->>>>>>> origin/master
+
 
         }else{
             Cart::destroy();
