@@ -16,6 +16,7 @@
 								Ghi nhớ đăng nhập
 							</span>
 							<button type="submit" class="btn btn-default">Đăng nhập</button>
+							
 						</form>
 					</div><!--/login form-->
 				</div>
