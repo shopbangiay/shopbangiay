@@ -1,6 +1,11 @@
 @extends('admin.master')
+
+@section('controller', 'Thuong')
+@section('action', 'hieu')
+
 @section('controller', 'Thương Hiệu  ')
 @section('action', '')
+
 @section('content')
 <!-- /.col-lg-12 -->
 <div class="col-lg-7" style="padding-bottom:120px">
@@ -20,11 +25,19 @@
             <input class="form-control" name="txtBrandName" placeholder="Please Enter Brand Name" />
         </div>
         <div class="form-group">
+
+            <label>Mô tả thương hiệu</label>
+            <textarea class="form-control" rows="3" name="txtDescription"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Trạng thái</label>
+
             <label>Mô Tả</label>
             <textarea class="form-control" rows="3" name="txtDescription"></textarea>
         </div>
         <div class="form-group">
             <label>Trạng Thái</label>
+
             <select name="txtStatus" class="form-control">
                 <option value="0">Hiện</option>
                 <option value="1">Ẩn</option>

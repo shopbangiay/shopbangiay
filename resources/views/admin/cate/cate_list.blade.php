@@ -1,4 +1,6 @@
 @extends('admin.master')
+@section('controller', 'Cate')
+@section('action', 'Edit')
 @section('content')
     <!-- /.col-lg-12 -->
     <table class="table table-striped table-bordered table-hover" id="dataTables-example">

@@ -140,6 +140,18 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                 <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span>Đơn hàng</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="{{URL::to('/manage-order')}}">Quản lý đơn hàng</a></li>
+                        
+                      
+                    </ul>
+                </li>
+                        </li>
                         <li>
                             <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">

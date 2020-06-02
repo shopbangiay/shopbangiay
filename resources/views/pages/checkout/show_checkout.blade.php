@@ -16,7 +16,11 @@
 
 			<div class="shopper-informations">
 				<div class="row">
-					
+					@if(Session::has('flash_message'))
+                            <div class="alert alert-{{Session::get('flash_level')}}">
+                                {{Session::get('flash_message')}}
+                            </div>
+                        	@endif
 					<div class="col-sm-12 clearfix">
 						<div class="bill-to">
 							<p>Điền thông tin gửi hàng</p>

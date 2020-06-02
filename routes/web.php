@@ -104,5 +104,7 @@ Route::post('/order-place','CheckoutController@order_place');
 // -------------------------------------------------------------------------
 
 //-------------------------------ĐẶT HÀNG----------------------------------- */
-
+Route::get('/print-order/{checkout_code}','CheckoutController@print_order');
+Route::get('/manage-order','CheckoutController@manage_order');
+Route::get('/view-order/{order_code}','CheckoutController@view_order');
 // -------------------------------------------------------------------------

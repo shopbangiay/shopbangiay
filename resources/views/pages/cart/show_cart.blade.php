@@ -107,8 +107,7 @@
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 <section id="cart_items">
     <div class="container">
         <div class="breadcrumbs">
@@ -263,9 +262,5 @@
         </div>
     </div>
 </section><!--/#do_action-->
-=======
->>>>>>> 7e56df48fb4250164d1da88b1dcf973efc444b6b
-=======
 
->>>>>>> origin/login
 @endsection
