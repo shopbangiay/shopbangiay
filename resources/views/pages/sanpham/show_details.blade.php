@@ -40,6 +40,7 @@
 
 	</div>
 	<div class="col-sm-7">
+	<div class="fb-like" data-href="http://nhom3th05.ml/chi-tiet-san-pham/.$detail_sp->$product_id" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>
 		<div class="product-information"><!--/product-information-->
 			<img src="images/product-details/new.jpg" class="newarrival" alt="" />
 			<h2>{{$value_detail->product_name}}</h2>
@@ -158,5 +159,5 @@
 		  </a>			
 	</div>
 </div><!--/recommended_items-->
-					
+<div class="fb-comments" data-href="http://nhom3th05.ml/chi-tiet-san-pham/.$detail_sp->$product_id" data-numposts="15" data-width=""></div>	
 @endsection

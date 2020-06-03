@@ -34,8 +34,7 @@ class HomeController extends Controller
         $cate_id = Product::join('category_product as cate', 'product.category_id', 'cate.category_id')
                             ->join('brand_product as brand', 'brand.brand_id', 'product.brand_id')
                             ->where('cate.category_id', $id)
-                            ->select('cate.category_id' ,'product.product_id' ,'product.product_name', 'product.product_image','product.product_price', 'product.product_desc', 'product.product_content', 'cate.category_name', 'brand.brand_name')
-                    
+                            ->select('cate.category_id' ,'product.product_id' ,'product.product_name', 'product.product_image','product.product_price', 'product.product_desc', 'product.product_content', 'cate.category_name', 'brand.brand_name')                    
                             ->paginate(6);
 
         return view('pages.category.show_category')
